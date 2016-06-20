@@ -7,4 +7,7 @@
     @include grid-column(4);
     margin-top: 1rem;
   }
+
+  border: 1px solid $od-light-yellow-border;
+  border-radius: $global-radius;
 }
