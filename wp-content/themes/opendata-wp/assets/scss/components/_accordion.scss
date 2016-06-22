@@ -1,0 +1,9 @@
+.accordion {
+  .accordion-item {
+    .accordion-title{
+      &:hover {
+        color: $dark-gray;
+      }
+    }
+  }
+}

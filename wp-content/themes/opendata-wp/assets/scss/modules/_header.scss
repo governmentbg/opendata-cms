@@ -1,0 +1,68 @@
+.od-header {
+  nav.top-bar {
+    background: linear-gradient( $white, #f7f6f0 );
+    border-bottom: 1px solid $od-light-yellow-border;
+
+    .header-wrapper {
+      background: url('../images/onelion.png') no-repeat right top;
+
+      .header-top {
+        .top-wrapper {
+          padding: $global-padding;
+          background-color: initial;
+          margin-bottom: 0;
+
+          .site-title {
+            font-size: 18px;
+            padding: $global-padding;
+          }
+
+          .header-logo {
+            float: left;
+            margin-right: $global-margin;
+          }
+
+          li.home {
+            float: left;
+          }
+        }
+      }
+
+      .header-bottom {
+        margin-bottom: $global-margin;
+
+        form {
+          display: inline-block;
+          float: right;
+          height: 35px;
+
+          .input-group {
+            margin: 0;
+            @include breakpoint(large) {
+              width: 200px;
+            }
+
+            .input-group-field {
+              height: 35px;
+              border-radius: $global-radius;
+
+              &:focus {
+                border-radius: 0;
+              }
+            }
+
+            .header-search-button {
+              margin-left: -24px;
+              color: $medium-gray;
+            }
+          }
+        }
+
+        .desktop-menu {
+          float: right;
+          margin-right: $global-margin;
+        }
+      }
+    }
+  }
+}

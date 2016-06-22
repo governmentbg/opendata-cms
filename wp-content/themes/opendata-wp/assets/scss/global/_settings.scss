@@ -46,21 +46,21 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(940);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #981919,
-  secondary: #D1A700,
+  secondary: #eed767,
   success: #06bb54,
   warning: #ffae00,
   alert: #ce1d1d,
 );
 $od-light-yellow: #EEEAD8;
-$od-light-yellow-border: scale-color($od-light-yellow, $lightness: -30%);
+$od-light-yellow-border: #D8D3C0;
 $od-light-red: #a98b8b;
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+$light-gray: #fbfbfb;
+$medium-gray: #c7c6c1;
+$dark-gray: #505050;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
@@ -196,14 +196,14 @@ $input-error-font-weight: $global-weight-bold;
 // 7. Accordion
 // ------------
 
-$accordion-background: $white;
+$accordion-background: $od-light-yellow;
 $accordion-plusminus: true;
-$accordion-item-color: foreground($accordion-background, $primary-color);
-$accordion-item-background-hover: $light-gray;
+$accordion-item-color: foreground($accordion-background, $dark-gray);
+$accordion-item-background-hover: $od-light-yellow;
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
-$accordion-content-border: 1px solid $light-gray;
-$accordion-content-color: foreground($accordion-background, $primary-color);
+$accordion-content-border: 1px solid $od-light-yellow-border;
+$accordion-content-color: foreground($accordion-background, $dark-gray);
 $accordion-content-padding: 1rem;
 
 // 8. Accordion Menu
@@ -225,12 +225,12 @@ $badge-font-size: 0.6rem;
 // ---------------
 
 $breadcrumbs-margin: 0 0 $global-margin 0;
-$breadcrumbs-item-font-size: rem-calc(11);
+$breadcrumbs-item-font-size: rem-calc(20);
 $breadcrumbs-item-color: $primary-color;
 $breadcrumbs-item-color-current: $black;
 $breadcrumbs-item-color-disabled: $medium-gray;
 $breadcrumbs-item-margin: 0.75rem;
-$breadcrumbs-item-uppercase: true;
+$breadcrumbs-item-uppercase: false;
 $breadcrumbs-item-slash: true;
 
 // 11. Button
@@ -347,7 +347,7 @@ $select-radius: $global-radius;
 $input-color: $black;
 $input-placeholder-color: $medium-gray;
 $input-font-family: inherit;
-$input-font-size: rem-calc(16);
+$input-font-size: rem-calc(13);
 $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
