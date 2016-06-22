@@ -8,7 +8,7 @@
 
       .header-top {
         .top-wrapper {
-          padding: $global-padding;
+          padding-top: $global-padding;
           background-color: initial;
           margin-bottom: 0;
 
@@ -45,6 +45,7 @@
             .input-group-field {
               height: 35px;
               border-radius: $global-radius;
+              display: inline-block;
 
               &:focus {
                 border-radius: 0;
