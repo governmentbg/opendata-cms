@@ -42,7 +42,7 @@
 
 			<div class="header-top row">
 				<ul class="top-wrapper large-6 columns">
-					<img class="header-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" />
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="header-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" /></a>
 					<h2 class="site-title"><strong>Портал за отворени данни </strong> на Република България</h2>
 				</ul>
 			</div>
