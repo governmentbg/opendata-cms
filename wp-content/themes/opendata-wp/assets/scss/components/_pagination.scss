@@ -1,0 +1,16 @@
+.pagination {
+  border-top: 1px solid $medium-gray;
+
+  li {
+    border-radius: 0;
+    border-right: 1px solid $medium-gray;
+    margin: 0;
+    float: left;
+    height: 28px;
+
+    a,
+    button {
+      border-radius: 0;
+    }
+  }
+}

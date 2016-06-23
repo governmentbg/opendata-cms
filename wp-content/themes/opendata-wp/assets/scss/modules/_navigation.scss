@@ -36,6 +36,15 @@
     color: #B9B9B9;
   }
 
+  .menu li.active a {
+    background-color: $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+
   .menu a {
     color: $white;
     background-color: $medium-gray;
@@ -53,9 +62,6 @@
       color: $dark-gray;
     }
 
-    &.active {
-      background-color: $primary-color;
-    }
   }
 
   // .menu>li:not(.menu-text)>a { padding: 1rem; }
