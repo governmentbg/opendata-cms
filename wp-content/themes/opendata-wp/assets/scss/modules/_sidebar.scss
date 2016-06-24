@@ -1,13 +1,31 @@
 .sidebar {
+  margin-top: $global-margin;
+  border: 1px solid $od-light-yellow-border;
+  border-radius: $global-radius;
+  padding: 0;
+
   @include breakpoint(small) {
     @include grid-column(12);
   }
 
   @include breakpoint(medium) {
-    @include grid-column(4);
-    margin-top: 1rem;
+    @include grid-column(3, 0);
+    @include grid-col-collapse();
+    @include grid-col-pos(-9);
   }
 
-  border: 1px solid $od-light-yellow-border;
-  border-radius: $global-radius;
+  .widget {
+    .widget-title {
+      background-color: $od-light-yellow;
+      font-size: 14px;
+      font-weight: bold;
+      color: $dark-gray;
+      padding: rem-calc(7px) rem-calc(15px);
+      border-bottom: 1px solid $od-light-yellow-border;
+    }
+
+    .widget-inner {
+      padding: $global-padding;
+    }
+  }
 }
