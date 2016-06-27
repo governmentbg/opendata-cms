@@ -1,32 +1,49 @@
 .od-header {
-  nav.top-bar {
-    background: linear-gradient( $white, #f7f6f0 );
-    border-bottom: 1px solid $od-light-yellow-border;
+  background: linear-gradient( $white, #f7f6f0 );
+  border-bottom: 1px solid $od-light-yellow-border;
 
-    .header-wrapper {
-      background: url('../images/onelion.png') no-repeat right top;
+  .header-wrapper {
+    background: url('../images/onelion.png') no-repeat right top;
 
-      .header-top {
-        .top-wrapper {
-          padding-top: $global-padding;
-          background-color: initial;
-          margin-bottom: 0;
+    .header-top {
+      .top-wrapper {
+        padding-top: $global-padding;
+        background-color: initial;
+        margin-bottom: 0;
 
-          .site-title {
-            font-size: 18px;
-            padding: $global-padding;
-          }
+        @include breakpoint(small only) {
+          margin-bottom: $global-margin;
+          text-align: center;
+        }
 
-          .header-logo {
-            float: left;
-            margin-right: $global-margin;
-          }
-
-          li.home {
-            float: left;
+        .home-link {
+          @include breakpoint(small only) {
+            display: inline-block;
           }
         }
+
+        .site-title {
+          font-size: 18px;
+          padding: $global-padding;
+
+          @include breakpoint(small only) {
+            display: none;
+          }
+        }
+
+        .header-logo {
+          float: left;
+          margin-right: $global-margin;
+        }
+
+        li.home {
+          float: left;
+        }
       }
+    }
+
+    .top-bar {
+      background-color: initial;
 
       .header-bottom {
         margin-bottom: $global-margin;
@@ -36,8 +53,18 @@
           float: right;
           height: 35px;
 
+          @include breakpoint(small only) {
+            display: none;
+          }
+
+
           .input-group {
             margin: 0;
+
+            @include breakpoint(medium) {
+              width: 100px;
+            }
+
             @include breakpoint(large) {
               width: 200px;
             }
@@ -49,6 +76,10 @@
 
               &:focus {
                 border-radius: 0;
+              }
+
+              @include breakpoint(small only) {
+                width: 100%;
               }
             }
 
@@ -65,5 +96,24 @@
         }
       }
     }
+
+    .mobile-search {
+      @include breakpoint(medium) {
+        display: none;
+      }
+
+      .input-group {
+        position: relative;
+        margin-bottom: 0;
+      }
+
+      .header-search-button {
+        position: absolute;
+        top: 13px;
+        right: 10px;
+        color: $medium-gray;
+      }
+    }
+
   }
 }

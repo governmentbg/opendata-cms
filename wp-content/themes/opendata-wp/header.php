@@ -28,46 +28,51 @@
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
 	<header id="masthead" class="site-header od-header" role="banner">
-
-		<div class="title-bar" data-responsive-toggle="site-navigation">
-			<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
-			<div class="title-bar-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			</div>
-		</div>
-
-		<nav id="site-navigation" class="top-bar" role="navigation">
-
 		<div class="header-wrapper row">
-
-			<div class="header-top row">
-				<ul class="top-wrapper large-6 columns">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="header-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" /></a>
+			<div class="header-top row small-12 column">
+				<ul class="top-wrapper small-12 large-6 column">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home-link"><img class="header-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" /></a>
 					<h2 class="site-title"><strong>Портал за отворени данни </strong> на Република България</h2>
 				</ul>
 			</div>
 
-
-			<div class="header-bottom row">
-				<form role="search" method="get" id="searchform" action="http://info.opendata.dev/">
-					<div class="input-group">
-						<input class="input-group-field" value="" name="s" id="s" placeholder="Search" type="text">
-						<button type="submit" class="header-search-button">
-							<i class="fa fa-search" aria-hidden="true"></i>
-						</button>
-					</div>
-				</form>
-
-				<?php foundationpress_top_bar_r(); ?>
-
-				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
-					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
-				<?php endif; ?>
+			<div class="title-bar">
+				<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
+				<div class="title-bar-title">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				</div>
 			</div>
 
-		</div>
+			<form role="search" method="get" id="searchform" action="http://info.opendata.dev/" class="mobile-search">
+				<div class="input-group">
+					<input class="input-group-field" value="" name="s" id="s" placeholder="Search" type="text">
+					<button type="submit" class="header-search-button">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					</button>
+				</div>
+			</form>
 
-		</nav>
+			<nav id="site-navigation" class="top-bar" role="navigation">
+
+				<div class="header-bottom row small-12 column">
+					<form role="search" method="get" id="searchform" action="http://info.opendata.dev/">
+						<div class="input-group">
+							<input class="input-group-field" value="" name="s" id="s" placeholder="Search" type="text">
+							<button type="submit" class="header-search-button">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</button>
+						</div>
+					</form>
+
+					<?php foundationpress_top_bar_r(); ?>
+
+					<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
+						<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
+					<?php endif; ?>
+				</div>
+
+			</nav>
+		</div>
 	</header>
 
 	<section class="container">
