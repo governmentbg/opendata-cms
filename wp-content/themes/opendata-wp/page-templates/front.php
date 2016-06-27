@@ -37,7 +37,7 @@ get_header(); ?>
 		</ul>
 	</section>
 
-	<?php get_sidebar( 'home-widgets' ); ?>
+	<?php get_sidebar( 'home' ); ?>
 
 </div>
 

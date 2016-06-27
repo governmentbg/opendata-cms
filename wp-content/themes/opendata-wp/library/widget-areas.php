@@ -32,7 +32,7 @@ function foundationpress_sidebar_widgets() {
 	  'id' => 'home-widgets',
 	  'name' => __( 'Home widgets', 'foundationpress' ),
 	  'description' => __( 'Widgets in this area will show up on the front page.', 'foundationpress' ),
-	  'before_widget' => '<article id="%1$s" class="large-4 columns widget %2$s">',
+	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
 	  'after_widget' => '</div></article>',
 	  'before_title' => '<h6 class="widget-title">',
 	  'after_title' => '</h6><div class="widget-inner">',
