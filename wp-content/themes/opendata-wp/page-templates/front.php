@@ -25,7 +25,10 @@ get_header(); ?>
 							<div class="grid-inner">
 								<?php the_post_thumbnail( 'medium', array( 'class' => 'grid-item-image')) ?>
 								<h3 class="grid-item-title"><?php the_title(); ?></h3>
+								<p class="grid-item-excerpt"><?php echo get_the_excerpt(); ?></p>
+								<span class="grid-item-meta"><?php echo get_the_date(); ?></span>
 							</div>
+							<a href="<?php echo get_the_permalink(); ?>" class="grid-item-permalink"></a>
 						</li>
 					<?php
 				}
