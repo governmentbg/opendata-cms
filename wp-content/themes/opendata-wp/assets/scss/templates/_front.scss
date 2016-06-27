@@ -1,8 +1,12 @@
 #page-homepage {
 	@include grid-row();
 
-	.frontpage-grid {
+	.frontpage-posts {
 		margin-top: $global-margin;
+		background-color: $light-gray;
+		border-top: 1px solid $medium-gray;
+		border-bottom: 1px solid $medium-gray;
+		padding: $global-padding;
 
 		@include breakpoint(small) {
 			@include grid-column(12);
@@ -12,10 +16,25 @@
 			@include grid-column(9, 0);
 			@include grid-col-pos(3);
 		}
+
+		.grid-item {
+			list-style-type: none;
+			margin-bottom: $global-margin;
+
+			.grid-inner {
+				border: 1px solid $primary-color;
+				border-radius: $global-radius;
+				padding: $global-padding;
+				background-color: $white;
+
+				.grid-item-title {
+					font-size: rem-calc(18);
+					font-weight: bold;
+				}
+			}
+		}
 	}
 }
-
-
 
 // Page header
 #front-hero {

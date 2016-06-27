@@ -20,12 +20,13 @@
       font-size: 14px;
       font-weight: bold;
       color: $dark-gray;
-      padding: rem-calc(7px) rem-calc(15px);
+      padding: rem-calc(7) rem-calc(15);
       border-bottom: 1px solid $od-light-yellow-border;
     }
 
     .widget-inner {
       padding: $global-padding;
+      overflow-x: hidden;
     }
   }
 }

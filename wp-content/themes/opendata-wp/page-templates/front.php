@@ -6,11 +6,34 @@ get_header(); ?>
 
 <div id="page-homepage" class="homepage-container" role="main">
 
-	<section class="frontpage-grid posts-grid">
+	<section class="frontpage-posts grid-container">
+		<?php
+			$posts = new WP_Query( array(
+				'post_type' => 'post',
+				'posts_per_page' => '20',
+				'paged' => true
+			));
+		?>
 
-		<p> post grid will go here. </p>
-
+		<ul class="frontpage-grid masonry-grid small-up-1 medium-up-3">
+			<?php
+			if( $posts->have_posts() ) {
+				while( $posts->have_posts() ) {
+					$posts->the_post();
+					?>
+						<li class="grid-item column">
+							<div class="grid-inner">
+								<?php the_post_thumbnail( 'medium', array( 'class' => 'grid-item-image')) ?>
+								<h3 class="grid-item-title"><?php the_title(); ?></h3>
+							</div>
+						</li>
+					<?php
+				}
+			}
+			?>
+		</ul>
 	</section>
+
 	<?php get_sidebar( 'home-widgets' ); ?>
 
 </div>

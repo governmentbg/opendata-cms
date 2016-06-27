@@ -30,7 +30,10 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	}
+	// Enqueue masonry.
+	wp_enqueue_script( 'jquery-masonry', 'jquery' );
+
+}
 
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );
 endif;
