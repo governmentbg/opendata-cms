@@ -27,6 +27,11 @@
     .widget-inner {
       padding: $global-padding;
       overflow-x: hidden;
+
+      li, p, span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 }
