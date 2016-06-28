@@ -9,7 +9,7 @@
 get_header(); ?>
 
 <div class="row">
-	<div class="small-12 large-8 columns" role="main">
+	<div class="small-12 large-9 columns medium-push-3" role="main">
 
 	<?php do_action( 'foundationpress_before_content' ); ?>
 

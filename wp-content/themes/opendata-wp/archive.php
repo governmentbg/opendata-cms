@@ -18,7 +18,7 @@
 get_header(); ?>
 
 <div id="page" role="main">
-	<article class="main-content small-12 medium-9 medium-push-3">
+	<article class="main-content small-12 medium-9 columns medium-push-3">
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
