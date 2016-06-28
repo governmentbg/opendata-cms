@@ -7,6 +7,7 @@
 		border-top: 1px solid $medium-gray;
 		border-bottom: 1px solid $medium-gray;
 		padding: $global-padding;
+		padding-bottom: 0;
 
 		@include breakpoint(small) {
 			@include grid-column(12);
@@ -19,6 +20,7 @@
 
 		.masonry-grid {
 			margin: 0;
+			padding-bottom: $global-padding;
 		}
 
 		.grid-item {
@@ -90,6 +92,16 @@
 				height: 100%;
 			}
 
+		}
+
+		.pagination-centered {
+			position: absolute;
+			width: 100%;
+			left: 0;
+
+			@include breakpoint(medium) {
+				bottom: -50px;
+			}
 		}
 	}
 }

@@ -348,7 +348,7 @@ $select-radius: $global-radius;
 $input-color: $black;
 $input-placeholder-color: $medium-gray;
 $input-font-family: inherit;
-$input-font-size: rem-calc(13);
+$input-font-size: rem-calc(14);
 $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
@@ -430,16 +430,16 @@ $orbit-control-zindex: 10;
 
 $pagination-font-size: rem-calc(14);
 $pagination-margin-bottom: $global-margin;
-$pagination-item-color: $black;
+$pagination-item-color: $primary-color;
 $pagination-item-padding: rem-calc(3 10);
 $pagination-item-spacing: rem-calc(1);
 $pagination-radius: 0;
 $pagination-item-background-hover: $light-gray;
-$pagination-item-background-current: $primary-color;
-$pagination-item-color-current: foreground($pagination-item-background-current);
+$pagination-item-background-current: $light-gray;
+$pagination-item-color-current: $medium-gray;
 $pagination-item-color-disabled: $medium-gray;
 $pagination-ellipsis-color: $black;
-$pagination-mobile-items: false;
+$pagination-mobile-items: true;
 $pagination-arrows: true;
 
 // 27. Progress Bar

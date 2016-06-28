@@ -1,16 +1,26 @@
-.pagination {
+.pagination-centered {
   border-top: 1px solid $medium-gray;
+  text-align: center;
 
-  li {
-    border-radius: 0;
-    border-right: 1px solid $medium-gray;
-    margin: 0;
-    float: left;
-    height: 28px;
+  .pagination {
+    display: inline-block;
+    margin-bottom: 0;
 
-    a,
-    button {
+    li {
       border-radius: 0;
+      border-right: 1px solid $medium-gray;
+      margin: 0;
+      float: left;
+      height: 28px;
+
+      a,
+      button {
+        border-radius: 0;
+      }
+    }
+
+    .current {
+      padding: inherit;
     }
   }
 }

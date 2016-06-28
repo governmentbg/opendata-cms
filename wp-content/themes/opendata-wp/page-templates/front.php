@@ -8,18 +8,19 @@ get_header(); ?>
 
 	<section class="frontpage-posts grid-container">
 		<?php
-			$posts = new WP_Query( array(
+			$paged = get_query_var( 'page' ) ? get_query_var( 'page' ) : 1;
+			$wp_query = new WP_Query( array(
 				'post_type' => 'post',
 				'posts_per_page' => '20',
-				'paged' => true
+				'paged' => $paged
 			));
 		?>
 
 		<ul class="frontpage-grid masonry-grid small-up-1 medium-up-3">
 			<?php
-			if( $posts->have_posts() ) {
-				while( $posts->have_posts() ) {
-					$posts->the_post();
+			if( $wp_query->have_posts() ) {
+				while( $wp_query->have_posts() ) {
+					$wp_query->the_post();
 					?>
 						<li class="grid-item column">
 							<div class="grid-inner">
@@ -35,7 +36,16 @@ get_header(); ?>
 			}
 			?>
 		</ul>
+		
+		<?php /* Display navigation to next/previous pages when applicable */ ?>
+		<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
+			<nav id="post-nav">
+				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
+				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+			</nav>
+		<?php } ?>
 	</section>
+
 
 	<?php get_sidebar( 'home' ); ?>
 
