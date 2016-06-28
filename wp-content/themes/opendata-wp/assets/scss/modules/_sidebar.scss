@@ -25,13 +25,22 @@
     }
 
     .widget-inner {
-      padding: $global-padding;
+      padding: 15px;
       overflow-x: hidden;
 
       li, p, span {
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
+      ul {
+        margin-left: 0;
+      }
+    }
+
+    .widget-inner.notitle {
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 }
