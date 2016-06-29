@@ -1,0 +1,22 @@
+#searchform {
+  display: inline-block;
+  width: 100%;
+
+  .input-group {
+    position: relative;
+
+    .input-group-field {
+      border-radius: $global-radius;
+    }
+
+    .search-button {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+
+      .fa {
+        color: $medium-gray;
+      }
+    }
+  }
+}
