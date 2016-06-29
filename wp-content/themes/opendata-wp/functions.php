@@ -52,3 +52,6 @@ require_once( 'library/responsive-images.php' );
 
 /** Random small functions that don't fit anywhere else */
 require_once( 'library/custom-functions.php' );
+
+/** Add header settings to customizer */
+require_once( 'library/header-customize.php' );
