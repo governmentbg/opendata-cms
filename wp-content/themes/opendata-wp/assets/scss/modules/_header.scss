@@ -17,23 +17,33 @@
         }
 
         .home-link {
+          padding-right: 0;
+
           @include breakpoint(small only) {
             display: inline-block;
+            float: left;
+          }
+
+          .header-logo {
+            @include breakpoint(medium) {
+              float: right;
+              margin-right: 0;
+            }
           }
         }
 
         .site-title {
           font-size: 18px;
           padding: $global-padding;
+          padding-left: ($global-padding * 2);
 
           @include breakpoint(small only) {
             display: none;
           }
-        }
 
-        .header-logo {
-          float: left;
-          margin-right: $global-margin;
+          span {
+            font-weight: 900;
+          }
         }
 
         li.home {

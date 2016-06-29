@@ -30,9 +30,9 @@
 	<header id="masthead" class="site-header od-header" role="banner">
 		<div class="header-wrapper row">
 			<div class="header-top row small-12 column">
-				<ul class="top-wrapper small-12 large-6 column">
-					<a href="<?php echo esc_url( get_theme_mod( 'logo_link_url' ) ); ?>" class="home-link"><img class="header-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" /></a>
-					<h2 class="site-title"><strong>Портал за отворени данни </strong> на Република България</h2>
+				<ul class="top-wrapper small-12 column row">
+					<a href="<?php echo esc_url( get_theme_mod( 'logo_link_url' ) ); ?>" class="home-link medium-3 column"><img class="header-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" /></a>
+					<h2 class="site-title medium-9 column"><span>Портал за отворени данни </span> <br /> на Република България</h2>
 				</ul>
 			</div>
 
