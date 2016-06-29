@@ -60,6 +60,7 @@
 
           .input-group {
             margin: 0;
+            position: relative;
 
             @include breakpoint(medium) {
               width: 100px;
@@ -84,7 +85,9 @@
             }
 
             .header-search-button {
-              margin-left: -24px;
+              position: absolute;
+              right: 10px;
+              top: 8px;
               color: $medium-gray;
             }
           }
