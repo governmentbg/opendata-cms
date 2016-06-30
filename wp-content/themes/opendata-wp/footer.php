@@ -16,17 +16,6 @@
 				<div class="footer-inner medium-8 medium-centered columns row">
 					<div class="small-12 medium-6 columns footer-left">
 						<?php footer_menu(); ?>
-						<!-- <ul class="footer-menu">
-							<li>
-								<a href="#"> За портала </a>
-							</li>
-							<li>
-								<a href="#"> API </a>
-							</li>
-							<li>
-								<a href="#"> Порталът е изготвен от Общество.бг </a>
-							</li>
-						</ul> -->
 					</div>
 					<div class="small-12 medium-6 columns footer-right">
 						<div class="credit-github credit-block">
