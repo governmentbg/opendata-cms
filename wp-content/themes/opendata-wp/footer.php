@@ -29,8 +29,15 @@
 						</ul> -->
 					</div>
 					<div class="small-12 medium-6 columns footer-right">
-						<p class="powered-by">Задвижван от </p>
-						<a href="http://wordpress.org"><img src="<?php echo get_stylesheet_directory_uri(). '/assets/images/wordpress-logo-textonly.png' ?>" class="wp-logo" /></a>
+						<div class="credit-github credit-block">
+							<p class="github-text credit-text">Сайтът е с отворен код и е лицензиран под <a href="https://github.com/governmentbg/opendata-cms/blob/master/LICENSE">GPLv3</a> лиценз. </p>
+							<p class="github-text credit-text">Кодът е достъпен в </p>
+							<a href="https://github.com/governmentbg/opendata-cms"><img src="<?php echo get_stylesheet_directory_uri(). '/assets/images/github-logo.png' ?>" class="github-logo footer-logo" /></a>
+						</div>
+						<div class="credit-wordpress credit-block">
+							<p class="powered-by credit-text">Задвижван от </p>
+							<a href="http://wordpress.org"><img src="<?php echo get_stylesheet_directory_uri(). '/assets/images/wordpress-logo-textonly.png' ?>" class="wp-logo footer-logo" /></a>
+						</div>
 					</div>
 				</div>
 			</footer>

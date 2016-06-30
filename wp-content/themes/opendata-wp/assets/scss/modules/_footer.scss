@@ -35,13 +35,27 @@
 				color: $dark-gray;
 				font-size: $small-font-size;
 
-				.powered-by {
+				.credit-block {
+					margin-bottom: $global-margin;
+				}
+
+				.credit-text {
 					margin-bottom: 0;
 					line-height: 1;
 				}
 
 				.wp-logo {
 					max-width: 50%;
+				}
+
+				.github-logo {
+					max-width: 40%;
+					opacity: 0.8;
+					transition: opacity 0.3s ease-in-out;
+
+					&:hover {
+						opacity: 1;
+					}
 				}
 			}
 		}
