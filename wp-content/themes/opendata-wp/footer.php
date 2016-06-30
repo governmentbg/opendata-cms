@@ -13,9 +13,26 @@
 		</section>
 		<div id="footer-container">
 			<footer id="footer">
-				<?php do_action( 'foundationpress_before_footer' ); ?>
-				<?php dynamic_sidebar( 'footer-widgets' ); ?>
-				<?php do_action( 'foundationpress_after_footer' ); ?>
+				<div class="footer-inner medium-8 medium-centered columns row">
+					<div class="small-12 medium-6 columns footer-left">
+						<?php footer_menu(); ?>
+						<!-- <ul class="footer-menu">
+							<li>
+								<a href="#"> За портала </a>
+							</li>
+							<li>
+								<a href="#"> API </a>
+							</li>
+							<li>
+								<a href="#"> Порталът е изготвен от Общество.бг </a>
+							</li>
+						</ul> -->
+					</div>
+					<div class="small-12 medium-6 columns footer-right">
+						<p class="powered-by">Задвижван от </p>
+						<a href="http://wordpress.org"><img src="<?php echo get_stylesheet_directory_uri(). '/assets/images/wordpress-logo-textonly.png' ?>" class="wp-logo" /></a>
+					</div>
+				</div>
 			</footer>
 		</div>
 
