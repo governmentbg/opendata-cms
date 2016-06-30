@@ -12,23 +12,8 @@
 
 		</section>
 		<div id="footer-container">
-			<footer id="footer">
-				<div class="footer-inner medium-8 medium-centered columns row">
-					<div class="small-12 medium-6 columns footer-left">
-						<?php footer_menu(); ?>
-					</div>
-					<div class="small-12 medium-6 columns footer-right">
-						<div class="credit-github credit-block">
-							<p class="github-text credit-text">Сайтът е с отворен код и е лицензиран под <a href="https://github.com/governmentbg/opendata-cms/blob/master/LICENSE">GPLv3</a> лиценз. </p>
-							<p class="github-text credit-text">Кодът е достъпен в </p>
-							<a href="https://github.com/governmentbg/opendata-cms"><img src="<?php echo get_stylesheet_directory_uri(). '/assets/images/github-logo.png' ?>" class="github-logo footer-logo" /></a>
-						</div>
-						<div class="credit-wordpress credit-block">
-							<p class="powered-by credit-text">Задвижван от </p>
-							<a href="http://wordpress.org"><img src="<?php echo get_stylesheet_directory_uri(). '/assets/images/wordpress-logo-textonly.png' ?>" class="wp-logo footer-logo" /></a>
-						</div>
-					</div>
-				</div>
+			<footer id="footer" class="medium-7 medium-centered columns">
+				<p class="footer-text medium-6 medium-centered columns"> Секция "Новини и информация" е част от <a href="http://opendata.government.bg/">Портала за отворени данни на Република България</a>. Задвижва се от <a href="http://wordpress.org">WordPress</a> и е с отворен код, <a href="https://github.com/governmentbg/opendata-cms">достъпен в GitHub</a> и лицензиран под <a href="https://github.com/governmentbg/opendata-cms/blob/master/LICENSE">GPLv3</a>. Ако забележите проблем или имате предложение, <a href="https://github.com/governmentbg/opendata-cms/issues/new">сигнализирайте.</a> </p>
 			</footer>
 		</div>
 

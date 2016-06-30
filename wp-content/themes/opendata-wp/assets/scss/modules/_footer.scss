@@ -2,70 +2,17 @@
 	max-width: 100%;
 	width: 100%;
 	margin: 0 auto;
-	margin-top: rem-calc(80);
+	margin-top: rem-calc(130);
 
 	#footer {
 		@include grid-row();
 		padding: rem-calc(30) 0;
+		border-top: 1px solid $medium-gray;
 
-		.footer-inner {
-			border-top: 1px solid $medium-gray;
-			padding-top: rem-calc(30px);
-
-			a {
-				font-size: $small-font-size;
-				color: $dark-gray;
-				padding: 0;
-			}
-
-			.footer-left {
-				text-align: right;
-
-				@include breakpoint(small only) {
-					text-align: left;
-					margin-bottom: 20px;
-				}
-
-				.footer-menu {
-
-					li {
-						margin-bottom: 6px;
-					}
-				}
-
-			}
-
-			.footer-right {
-				text-align: left;
-				color: $dark-gray;
-				font-size: $small-font-size;
-
-				.credit-block {
-					margin-bottom: $global-margin;
-				}
-
-				.credit-text {
-					margin-bottom: 0;
-					line-height: 1;
-				}
-
-				.wp-logo {
-					max-width: 50%;
-
-					@include breakpoint( small only ) {
-						margin-top: 10px;
-					}
-				}
-
-				.github-logo {
-					max-width: 40%;
-					opacity: 0.8;
-
-					&:hover {
-						opacity: 1;
-					}
-				}
-			}
+		.footer-text {
+			font-size: $small-font-size;
+			color: $dark-gray;
+			text-align: center;
 		}
 	}
 }
