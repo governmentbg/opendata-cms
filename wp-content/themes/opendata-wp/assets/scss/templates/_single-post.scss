@@ -1,8 +1,9 @@
 #single-post {
   @include grid-row();
-  margin-top: 3rem;
 
   .main-content {
+    margin-top: $global-margin;
+
     @include breakpoint(small) {
       @include grid-column(12);
     }
@@ -10,6 +11,26 @@
     @include breakpoint(medium) {
       @include grid-column(9);
       @include grid-col-pos(3);
+    }
+
+    .entry-title {
+      font-size: rem-calc(28);
+      margin-bottom: 0;
+    }
+
+    .entry-meta {
+      font-size: $small-font-size;
+      color: $medium-gray;
+      margin-bottom: $global-margin;
+    }
+
+    .entry-content {
+      font-size: $small-font-size;
+
+      .wp-post-image {
+        border-radius: $global-radius;
+        margin-bottom: $global-margin;
+      }
     }
   }
 
