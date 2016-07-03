@@ -1,177 +1,336 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: foundationpress-libsass-template 5.4.0\n"
+"Project-Id-Version: opendata-wp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 23:50+0300\n"
-"PO-Revision-Date: 2016-07-02 19:35+0300\n"
+"POT-Creation-Date: Sun Jul 03 2016 22:57:11 GMT+0300 (EEST)\n"
+"PO-Revision-Date: 2016-07-03 23:09+0300\n"
+"Last-Translator: admin <admin@localhost.dev>\n"
 "Language-Team: \n"
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.8.7.1\n"
-"Last-Translator: \n"
-"Language: bg_BG\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;__:1;"
+"_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;_x:1,2c;"
+"_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;esc_attr__:1;"
+"esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;esc_html_x:1,2c;"
+"comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: bg_BG\n"
+"X-Poedit-SearchPath-0: ..\n"
 
-#: 404.php:8
+#: ../page.php:28 ../single.php:30
+msgid "Edit"
+msgstr "Редактиране"
+
+#: ../searchform.php:13
+msgid "Search news and information"
+msgstr "Търсене в новини и информация"
+
+#: ../comments.php:26
+msgid "Reply"
+msgstr "Отговор"
+
+#: ../library/responsive-images.php:19
+msgid "FP Small"
+msgstr "FP Small"
+
+#: ../library/responsive-images.php:20
+msgid "FP Medium"
+msgstr "FP Medium"
+
+#: ../library/responsive-images.php:21
+msgid "FP Large"
+msgstr "FP Large"
+
+#: ../library/widget-areas.php:33
+msgid "Home widgets"
+msgstr "Джаджи на началната страница"
+
+#: ../library/widget-areas.php:34
+msgid "Widgets in this area will show up on the front page."
+msgstr "Джаджите, придърпани тук, ще се показват на началната страница."
+
+#: ../library/header-customize.php:14
+msgid "Header settings"
+msgstr "Настройки на челото"
+
+#: ../library/header-customize.php:20
+msgid "Custom logo link"
+msgstr "Лого линк"
+
+#: ../library/navigation.php:44
+msgid "mobile-nav"
+msgstr ""
+
+#: ../library/navigation.php:226
+msgid "Page"
+msgstr "Страница"
+
+#: ../library/custom-nav.php:16
+msgid "Mobile Menu Settings"
+msgstr "Настройки на мобилното меню"
+
+#: ../library/custom-nav.php:17
+msgid "Controls the mobile menu"
+msgstr "Управлява мобилното меню"
+
+#: ../library/custom-nav.php:22
+msgid "Mobile navigation layout"
+msgstr "Разположение на мобилното мено"
+
+#: ../library/custom-nav.php:31
+msgid "topbar"
+msgstr "горна лента"
+
+#. Name of the template
+msgid "Full Width"
+msgstr "Пълна ширина"
+
+#. Name of the template
+msgid "Kitchen Sink"
+msgstr "Тестова страница"
+
+#. Name of the template
+msgid "Left Sidebar"
+msgstr "Лява странична лента"
+
+#. Name of the template
+msgid "Front"
+msgstr "Начална"
+
+#. Name of the theme
+msgid "opendata-wp"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "http://info.opendata.government.bg"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"A theme build for opendata.government.bg, based on FoundationPress by "
+"@olefredrik"
+msgstr ""
+
+#. Author of the theme
+msgid "Shtrak!"
+msgstr "Штрак!"
+
+#. Author URI of the theme
+msgid "http://shtrak.eu"
+msgstr ""
+
+#: ../404.php:16
 msgid "File Not Found"
 msgstr "Файлът не е намерен"
 
-#: 404.php:12
+#: ../404.php:20
 msgid ""
-"The page you are looking for might have been removed, had its name changed, "
-"or is temporarily unavailable."
+"The page you are looking for might have been removed, had its name changed, or "
+"is temporarily unavailable."
 msgstr ""
-"Страницата, която търсите е била премахната, преименувана или е просто "
-"временно недостъпна."
+"Страницата, която търсите е била премахната, преименувана или е просто временно "
+"недостъпна."
 
-#: 404.php:14
+#: ../404.php:22
 msgid "Please try the following:"
 msgstr "Можете да опитате следното:"
 
-#: 404.php:16
+#: ../404.php:24
 msgid "Check your spelling"
 msgstr "Проверете дали адресът е изписан правилно"
 
-#: 404.php:17
+#: ../404.php:25
 #, php-format
 msgid "Return to the <a href=\"%s\">home page</a>"
 msgstr "Върнете се в <a href=\"%s\">началото</a>"
 
-#: 404.php:18
+#: ../404.php:26
 msgid "Click the <a href=\"javascript:history.back()\">Back</a> button"
 msgstr "Натиснете бутона <a href=\"javascript:history.back()\">Назад</a>"
 
-#. /previous pages when applicable
-#: archive.php:21 index.php:24 search.php:25
+#: ../page.php:31 ../single.php:33 ../woocommerce.php:26 ../page-templates/page-
+#: full-width.php:22 ../page-templates/page-sidebar-left.php:22
+msgid "Pages:"
+msgstr "Страници:"
+
+#. previous pages when applicable
+#: ../index.php:35 ../search.php:34 ../archive.php:37 ../page-templates/front.php:
+#: 43
 msgid "&larr; Older posts"
 msgstr "&larr; По-стари публикации"
 
-#: archive.php:22 index.php:25 search.php:26
+#: ../index.php:36 ../search.php:35 ../archive.php:38 ../page-templates/front.php:
+#: 44
 msgid "Newer posts &rarr;"
 msgstr "По-нови публикации &rarr;"
 
-#: comments.php:8
-#, php-format
-msgid "<cite class=\"fn\">%s</cite>"
-msgstr "<cite class=\"fn\">%s</cite>"
+#: ../search.php:16
+msgid "Search Results for"
+msgstr "Резултати от търсенето за"
 
-#: comments.php:9
-#, php-format
-msgid "%1$s"
-msgstr "%1$s"
-
-#: comments.php:10
-msgid "(Edit)"
-msgstr "(Редактиране)"
-
-#: comments.php:16
+#: ../comments.php:35 ../library/foundation.php:155
 msgid "Your comment is awaiting moderation."
 msgstr "Коментарът Ви очаква одобрение."
 
-#: comments.php:31
+#: ../comments.php:54
 msgid "Please do not load this page directly. Thanks!"
 msgstr "Моля, не зареждайте тази страница директно. Благодаря!"
 
-#: comments.php:36
+#: ../comments.php:59
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
-"Тази публикация е защитена с парола. Въведете паролата, за да четете "
-"коментари."
+"Тази публикация е защитена с парола. Въведете паролата, за да четете коментари."
 
-#: comments.php:46
-msgid "No Responses to"
-msgstr "Няма отговори към"
-
-#: comments.php:46
-msgid "One Response to"
-msgstr "Един отговор към"
-
-#: comments.php:46
-msgid "% Responses to"
-msgstr "% Отговора към"
-
-#: comments.php:53
-msgid "&larr; Older comments"
-msgstr "&larr; По-стари коментари"
-
-#: comments.php:54
-msgid "Newer comments &rarr;"
-msgstr "По-нови коментари &rarr;"
-
-#: comments.php:61
+#: ../comments.php:72
 msgid "Leave a Reply"
 msgstr "Оставете коментар"
 
-#: comments.php:61
+#: ../comments.php:72
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Оставете коментар към %s"
 
-#: comments.php:64
+#: ../comments.php:75
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Трябва да сте <a href=\"%s\">влезли</a>, за да коментирате."
 
-#: comments.php:68
+#: ../comments.php:79
 #, php-format
 msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
 msgstr "Влезли сте като <a href=\"%s/wp-admin/profile.php\">%s</a>."
 
-#: comments.php:68
+#: ../comments.php:79
 msgid "Log out of this account"
 msgstr "Излезте от този профил"
 
-#: comments.php:68
+#: ../comments.php:79
 msgid "Log out &raquo;"
 msgstr "Излезте &raquo;"
 
-#: comments.php:71
+#: ../comments.php:84
 msgid "Name"
 msgstr "Име"
 
-#: comments.php:71 comments.php:75
+#: ../comments.php:84 ../comments.php:92
 msgid " (required)"
 msgstr "(задължително)"
 
-#: comments.php:75
+#: ../comments.php:92
 msgid "Email (will not be published)"
 msgstr "Имейл (няма да бъде публикуван)"
 
-#: comments.php:79
+#: ../comments.php:100
 msgid "Website"
 msgstr "Уебсайт"
 
-#: comments.php:84
+#: ../comments.php:109
 msgid "Comment"
 msgstr "Коментар"
 
-#: comments.php:87
+#: ../comments.php:116
 msgid "You can use these tags:"
 msgstr "Можете да използвате следните тагове:"
 
-#: comments.php:88
+#: ../comments.php:122
 msgid "Submit Comment"
 msgstr "Изпращане на коментар"
 
-#: content-none.php:11
+#: ../library/foundation.php:24
+msgid "&laquo;"
+msgstr "&laquo;"
+
+#: ../library/foundation.php:25
+msgid "&raquo;"
+msgstr "&raquo;"
+
+#: ../library/foundation.php:53
+#, php-format
+msgid ""
+"Please assign a menu to the primary menu location under %1$s or %2$s the design."
+msgstr ""
+"Моля, задайте меню към главната навигационна локация чрез %1$s или променете "
+"дизайна чрез %2$s."
+
+#: ../library/foundation.php:54
+#, php-format
+msgid "<a href=\"%s\">Menus</a>"
+msgstr "<a href=\"%s\">Менюта</a>"
+
+#: ../library/foundation.php:57
+#, php-format
+msgid "<a href=\"%s\">Customize</a>"
+msgstr "<a href=\"%s\">настройките</a>"
+
+#: ../library/foundation.php:105
+msgid "No Responses to"
+msgstr "Няма отговори към"
+
+#: ../library/foundation.php:105
+msgid "One Response to"
+msgstr "Един отговор към"
+
+#: ../library/foundation.php:105
+msgid "% Responses to"
+msgstr "% Отговора към"
+
+#: ../library/foundation.php:145
+#, php-format
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr "<cite class=\"fn\">%s</cite>"
+
+#: ../library/foundation.php:146
+#, php-format
+msgid "%1$s"
+msgstr "%1$s"
+
+#: ../library/widget-areas.php:13
+msgid "Sidebar widgets"
+msgstr "Джаджи"
+
+#: ../library/widget-areas.php:14
+msgid "Drag widgets to this sidebar container."
+msgstr "Придърпайте джаджа към тази странична лента."
+
+#: ../library/widget-areas.php:23
+msgid "Footer widgets"
+msgstr "Футър джаджи"
+
+#: ../library/widget-areas.php:24
+msgid "Drag widgets to this footer container"
+msgstr "Придърпайте джаджи към този футър."
+
+#: ../library/entry-meta.php:12
+#, php-format
+msgid "Posted on %s at %s."
+msgstr "Публикувано на %s в %s."
+
+#. archive/search.
+#. *
+#. * @subpackage FoundationPress
+#. * @since FoundationPress 1.0.0
+#.
+#: ../template-parts/content.php:19
+msgid "Continue reading..."
+msgstr "Продължете четенето..."
+
+#: ../template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr "Няма съвпадения"
 
-#: content-none.php:17
+#: ../template-parts/content-none.php:20
 #, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Готови сте да създадете първата си публикация? <a href=\"%1$s\">Започнете "
-"тук</a>."
+"Готови сте да създадете първата си публикация? <a href=\"%1$s\">Започнете тук</"
+"a>."
 
-#: content-none.php:21
+#: ../template-parts/content-none.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -179,102 +338,8 @@ msgstr ""
 "Съжаляваме, но не намерихме нищо отговарящо на критериите Ви. Моля опитайте "
 "отново с различни ключови думи."
 
-#: content-none.php:26
+#: ../template-parts/content-none.php:29
 msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching "
+"can help."
 msgstr "Не намираме това, което търсите. Може би търсачката ще Ви помогне."
-
-#. /archive/search.
-#. *
-#. * @subpackage FoundationPress
-#. * @since FoundationPress 1.0.0
-#.
-#: content.php:16
-msgid "Continue reading..."
-msgstr "Продължете четенето..."
-
-#: hero.php:40 kitchen-sink.php:739 page-full.php:19 page-sidebar-left.php:21
-#: page.php:18 single.php:27 woocommerce.php:18
-msgid "Pages:"
-msgstr "Страници:"
-
-#: library/entry-meta.php:4
-#, php-format
-msgid "Posted on %s at %s."
-msgstr "Публикувано на %s в %s."
-
-#: library/entry-meta.php:5
-msgid "Written by"
-msgstr "Публикувано от"
-
-#: library/foundation.php:16
-msgid "&laquo;"
-msgstr "&laquo;"
-
-#: library/foundation.php:17
-msgid "&raquo;"
-msgstr "&raquo;"
-
-#: library/foundation.php:40
-#, php-format
-msgid ""
-"Please assign a menu to the primary menu location under %1$s or %2$s the "
-"design."
-msgstr ""
-"Моля, задайте меню към главната навигационна локация чрез %1$s или "
-"променете дизайна чрез %2$s."
-
-#: library/foundation.php:41
-#, php-format
-msgid "<a href=\"%s\">Menus</a>"
-msgstr "<a href=\"%s\">Менюта</a>"
-
-#: library/foundation.php:44
-#, php-format
-msgid "<a href=\"%s\">Customize</a>"
-msgstr "<a href=\"%s\">настройките</a>"
-
-#: library/widget-areas.php:6
-msgid "Sidebar widgets"
-msgstr "Джаджи"
-
-#: library/widget-areas.php:7
-msgid "Drag widgets to this sidebar container."
-msgstr "Придърпайте джаджа към тази странична лента."
-
-#: library/widget-areas.php:16
-msgid "Footer widgets"
-msgstr "Футър джаджи"
-
-#: library/widget-areas.php:17
-msgid "Drag widgets to this footer container"
-msgstr "Придърпайте джаджи към този футър."
-
-#: node_modules/grunt-pot/test/fixtures/some-file.php:3
-msgid "I'm a translatable string."
-msgstr "Аз съм преведим низ."
-
-#: node_modules/grunt-pot/test/fixtures/some-other-file.php:4
-msgid "Me too"
-msgstr "Аз също"
-
-#: node_modules/grunt-pot/test/fixtures/some-other-file.php:7
-#, php-format
-msgid "I have %d apple"
-msgid_plural "I have %d apples"
-msgstr[0] "Имам %d ябълка"
-msgstr[1] "Имам %d ябълки"
-
-#. / TRANSLATORS: This should be translated as a shorthand for YEAR-MONTH-DAY using 4, 2 and 2 digits.
-#: node_modules/grunt-pot/test/fixtures/some-other-file.php:16
-msgid "yyyy-mm-dd"
-msgstr "гггг-мм-дд"
-
-#: search.php:7
-msgid "Search Results for"
-msgstr "Резултати от търсенето за"
-
-#: searchform.php:6 searchform.php:10
-msgid "Search"
-msgstr "Търсене"
