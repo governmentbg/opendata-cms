@@ -34,8 +34,9 @@
 
         .site-title {
           font-size: 18px;
-          padding: $global-padding;
+          padding: 1.2rem;
           padding-left: ($global-padding * 2);
+          line-height: 1.1rem;
 
           @include breakpoint(small only) {
             display: none;
