@@ -226,10 +226,10 @@ $badge-font-size: 0.6rem;
 // 10. Breadcrumbs
 // ---------------
 
-$breadcrumbs-margin: 0 0 $global-margin 0;
+$breadcrumbs-margin: $global-margin 0 0 0;
 $breadcrumbs-item-font-size: rem-calc(20);
 $breadcrumbs-item-color: $dark-gray;
-$breadcrumbs-item-color-current: $black;
+$breadcrumbs-item-color-current: $dark-gray;
 $breadcrumbs-item-color-disabled: $medium-gray;
 $breadcrumbs-item-margin: 0.3rem;
 $breadcrumbs-item-uppercase: false;

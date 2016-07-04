@@ -76,4 +76,7 @@
 	</header>
 
 	<section class="container">
+		<div class="breadcrumbs-wrap row">
+			<?php foundationpress_breadcrumb(); ?>
+		</div>
 		<?php do_action( 'foundationpress_after_header' );

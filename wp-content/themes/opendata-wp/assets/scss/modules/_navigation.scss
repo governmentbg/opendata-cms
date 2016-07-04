@@ -124,3 +124,20 @@
 .nav-next {
 	float:right;
 }
+
+//Breadcrumbs
+.breadcrumbs {
+  .bread-portal-home {
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  a {
+    font-size: 20px;
+  }
+
+  li:not(:last-child)::after { /*separator*/
+    color: $dark-gray;
+    top: 0;
+  }
+}

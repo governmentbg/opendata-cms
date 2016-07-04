@@ -99,7 +99,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 		$separator  = '&gt;';
 		$id         = 'breadcrumbs';
 		$class      = 'breadcrumbs';
-		$home_title = __( 'News and information' );
+		$home_title = __( 'News and information', 'foundationpress' );
 		$opendata_home = '<i class="fa fa-home" aria-hidden="true"></i>';
 		$opendata_url = 'http://opendata.government.bg';
 
