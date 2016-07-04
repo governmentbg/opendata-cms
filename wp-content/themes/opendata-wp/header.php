@@ -45,7 +45,7 @@
 
 			<form role="search" method="get" id="header-searchform" action="http://opendata.government.bg/" class="mobile-search">
 				<div class="input-group">
-					<input class="input-group-field" value="" name="q" id="q" placeholder="Search" type="text">
+					<input class="input-group-field" value="" name="q" id="q" placeholder="<?php _e( 'Search' ); ?>" type="text">
 					<button type="submit" class="header-search-button">
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</button>
@@ -57,7 +57,7 @@
 				<div class="header-bottom row small-12 column">
 					<form role="search" method="get" id="header-searchform" action="http://opendata.government.bg/">
 						<div class="input-group">
-							<input class="input-group-field" value="" name="q" id="q" placeholder="Search" type="text">
+							<input class="input-group-field" value="" name="q" id="q" placeholder="<?php _e( 'Search' ); ?>" type="text">
 							<button type="submit" class="header-search-button">
 								<i class="fa fa-search" aria-hidden="true"></i>
 							</button>
