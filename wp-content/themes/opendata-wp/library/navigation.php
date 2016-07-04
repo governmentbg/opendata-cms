@@ -99,7 +99,9 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 		$separator  = '&gt;';
 		$id         = 'breadcrumbs';
 		$class      = 'breadcrumbs';
-		$home_title = 'Homepage';
+		$home_title = __( 'News and information' );
+		$opendata_home = '<i class="fa fa-home" aria-hidden="true"></i>';
+		$opendata_url = 'http://opendata.government.bg';
 
 		// Get the query & post information
 		global $post,$wp_query;
@@ -112,6 +114,10 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 		if ( ! is_front_page() ) {
 
 			// Home page
+			echo '<li class="item-portal-home"><a class="bread-link bread-portal-home" href="'. $opendata_url .'">'. $opendata_home .'</a></li>';
+			if ( $separatorclass ) {
+				echo '<li class="separator separator-home"> ' . $separator . ' </li>';
+			}
 			echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a></li>';
 			if ( $separatorclass ) {
 				echo '<li class="separator separator-home"> ' . $separator . ' </li>';
@@ -119,17 +125,13 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 
 			if ( is_single() ) {
 
-				// Single post (Only display the first category)
-				echo '<li class="item-cat item-cat-' . $category[0]->term_id . ' item-cat-' . $category[0]->category_nicename . '"><a class="bread-cat bread-cat-' . $category[0]->term_id . ' bread-cat-' . $category[0]->category_nicename . '" href="' . get_category_link($category[0]->term_id) . '" title="' . $category[0]->cat_name . '">' . $category[0]->cat_name . '</a></li>';
-				if ( $separatorclass ) {
-					echo '<li class="separator separator-' . $category[0]->term_id . '"> ' . $separator . ' </li>';
-				}
+				// Single post
 				echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
 
 			} else if ( is_category() ) {
 
 				// Category page
-				echo '<li class="item-current item-cat-' . $category[0]->term_id . ' item-cat-' . $category[0]->category_nicename . '"><strong class="bread-current bread-cat-' . $category[0]->term_id . ' bread-cat-' . $category[0]->category_nicename . '">' . $category[0]->cat_name . '</strong></li>';
+				echo '<li class="item-current item-cat-' . $category[0]->term_id . ' item-cat-' . $category[0]->category_nicename . '"><strong class="bread-current bread-cat-' . $category[0]->term_id . ' bread-cat-' . $category[0]->category_nicename . '">' . __( 'Category: ', 'foundationpress' ) . $category[0]->cat_name . '</strong></li>';
 
 			} else if ( is_page() ) {
 
@@ -159,7 +161,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 
 				} else {
 
-					// Just display current page if not parents
+					// Just display current page if no parents
 					echo '<li class="current item-' . $post->ID . '"> ' . get_the_title() . '</li>';
 
 				}
@@ -179,36 +181,36 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 
 				// Day archive
 				// Year link
-				echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link(get_the_time('Y')) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</a></li>';
+				echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link(get_the_time('Y')) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . '</a></li>';
 				if ( $separatorclass ) {
 					echo '<li class="separator separator-' . get_the_time('Y') . '"> ' . $separator . ' </li>';
 				}
 
 				// Month link
-				echo '<li class="item-month item-month-' . get_the_time('m') . '"><a class="bread-month bread-month-' . get_the_time('m') . '" href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</a></li>';
+				echo '<li class="item-month item-month-' . get_the_time('m') . '"><a class="bread-month bread-month-' . get_the_time('m') . '" href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '" title="' . get_the_time('M') . '">' . get_the_time('M') . '</a></li>';
 				if ( $separatorclass ) {
 					echo '<li class="separator separator-' . get_the_time('m') . '"> ' . $separator . ' </li>';
 				}
 
 				// Day display
-				echo '<li class="current item-' . get_the_time('j') . '">' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</li>';
+				echo '<li class="current item-' . get_the_time('j') . '">' . get_the_time('jS') . ' ' . get_the_time('M') . '</li>';
 
 			} else if ( is_month() ) {
 
 				// Month Archive
 				// Year link
-				echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link(get_the_time('Y')) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</a></li>';
+				echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link(get_the_time('Y')) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . '</a></li>';
 				if ( $separatorclass ) {
 					echo '<li class="separator separator-' . get_the_time('Y') . '"> ' . $separator . ' </li>';
 				}
 
 				// Month display
-				echo '<li class="item-month item-month-' . get_the_time('m') . '">' . get_the_time('M') . ' Archives</li>';
+				echo '<li class="item-month item-month-' . get_the_time('m') . '">' . get_the_time('M') . '</li>';
 
 			} else if ( is_year() ) {
 
 				// Display year archive
-				echo '<li class="current item-current-' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</li>';
+				echo '<li class="current item-current-' . get_the_time('Y') . '">' . get_the_time('Y') . '</li>';
 
 			} else if ( is_author() ) {
 
@@ -237,7 +239,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 			}
 		} else {
 			if ( $showhome ) {
-				echo '<li class="item-home current">' . $home_title . '</li>';
+				echo '<li class="item-home"><a class="bread-link bread-portal-home" href="'. $opendata_url .'">'. $opendata_home .'</a> / <a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a></li>';
 			}
 		}
 		echo '</ul>';
