@@ -1,0 +1,90 @@
+//global gallery styles
+.gallery {
+  .gallery-item {
+    margin: 15px 0;
+    padding: 5px;
+  }
+}
+
+//1 col gallery
+.gallery-columns-1 {
+  @include grid-row;
+  @include grid-layout(1, '.gallery-item');
+}
+//2 col gallery
+.gallery-columns-2 {
+  @include grid-row;
+  @include grid-layout(2, '.gallery-item');
+}
+//3 col gallery
+.gallery-columns-3 {
+  @include grid-row;
+  @include grid-layout(3, '.gallery-item');
+
+  @include breakpoint(small only) {
+    @include grid-layout(2, '.gallery-item');
+  }
+}
+//4 col gallery
+.gallery-columns-4 {
+  @include grid-row;
+  @include grid-layout(4, '.gallery-item');
+
+  @include breakpoint(small only) {
+    @include grid-layout(2, '.gallery-item');
+  }
+}
+//5 col gallery
+.gallery-columns-5 {
+  @include grid-row;
+  @include grid-layout(5, '.gallery-item');
+
+  @include breakpoint(small only) {
+    @include grid-layout(2, '.gallery-item');
+  }
+}
+//6 col gallery
+.gallery-columns-6 {
+  @include grid-row;
+  @include grid-layout(6, '.gallery-item');
+
+  @include breakpoint(small only) {
+    @include grid-layout(2, '.gallery-item');
+  }
+}
+//7 col gallery
+.gallery-columns-7 {
+  @include grid-row;
+  @include grid-layout(7, '.gallery-item');
+
+  @include breakpoint(small only) {
+    @include grid-layout(2, '.gallery-item');
+  }
+}
+//8 col gallery
+.gallery-columns-8 {
+  @include grid-row;
+  @include grid-layout(8, '.gallery-item');
+
+  @include breakpoint(small only) {
+    @include grid-layout(2, '.gallery-item');
+  }
+}
+//9 col gallery
+.gallery-columns-9 {
+  @include grid-row;
+  @include grid-layout(9, '.gallery-item');
+
+  @include breakpoint(small only) {
+    @include grid-layout(2, '.gallery-item');
+  }
+}
+//10 col gallery
+.gallery-columns-10 {
+  @include grid-row;
+  @include grid-layout(10, '.gallery-item');
+
+  @include breakpoint(small only) {
+    @include grid-layout(2, '.gallery-item');
+  }
+}
