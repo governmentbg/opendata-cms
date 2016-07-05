@@ -18,7 +18,7 @@
 
  <?php do_action( 'foundationpress_before_content' ); ?>
  <?php while ( have_posts() ) : the_post(); ?>
-   <article <?php post_class('main-content small-12 medium-9 medium-push-3 columns') ?> id="post-<?php the_ID(); ?>">
+   <article <?php post_class('main-content small-12 columns') ?> id="post-<?php the_ID(); ?>">
        <header>
            <h1 class="entry-title"><?php the_title(); ?></h1>
        </header>
@@ -38,7 +38,7 @@
  <?php endwhile;?>
 
  <?php do_action( 'foundationpress_after_content' ); ?>
- <?php get_sidebar(); ?>
+ <?php // get_sidebar(); ?>
 
  </div>
 
