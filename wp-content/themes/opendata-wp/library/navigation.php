@@ -239,7 +239,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 			}
 		} else {
 			if ( $showhome ) {
-				echo '<li class="item-home"><a class="bread-link bread-portal-home" href="'. $opendata_url .'">'. $opendata_home .'</a> / <a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a></li>';
+				echo '<li class="item-home"><a class="bread-link bread-portal-home" href="'. $opendata_url .'">'. $opendata_home .'</a> / <a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '"><strong>' . $home_title . '</strong></a></li>';
 			}
 		}
 		echo '</ul>';
