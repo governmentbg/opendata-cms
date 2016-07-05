@@ -4,9 +4,9 @@
   margin-top: 30px;
 
   .main-content {
-    @include breakpoint(small) {
-      @include grid-column(12);
-    }
+    // @include breakpoint(small) {
+    //   @include grid-column(12);
+    // }
 
     .entry-title {
       font-size: 28px;
