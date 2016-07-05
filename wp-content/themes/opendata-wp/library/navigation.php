@@ -157,12 +157,12 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 					echo $parents;
 
 					// Current page
-					echo '<li class="current item-' . $post->ID . '">' . get_the_title() . '</li>';
+					echo '<li class="current item-' . $post->ID . '"><strong>' . get_the_title() . '</strong></li>';
 
 				} else {
 
 					// Just display current page if no parents
-					echo '<li class="current item-' . $post->ID . '"> ' . get_the_title() . '</li>';
+					echo '<li class="current item-' . $post->ID . '"><strong>' . get_the_title() . '</strong></li>';
 
 				}
 			} else if ( is_tag() ) {
@@ -175,7 +175,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				$terms = get_terms($taxonomy, $args);
 
 				// Display the tag name
-				echo '<li class="current item-tag-' . $terms[0]->term_id . ' item-tag-' . $terms[0]->slug . '">' . $terms[0]->name . '</li>';
+				echo '<li class="current item-tag-' . $terms[0]->term_id . ' item-tag-' . $terms[0]->slug . '"><strong>' . $terms[0]->name . '</strong></li>';
 
 			} elseif ( is_day() ) {
 
@@ -193,7 +193,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				}
 
 				// Day display
-				echo '<li class="current item-' . get_the_time('j') . '">' . get_the_time('jS') . ' ' . get_the_time('M') . '</li>';
+				echo '<li class="current item-' . get_the_time('j') . '"><strong>' . get_the_time('jS') . ' ' . get_the_time('M') . '</strong></li>';
 
 			} else if ( is_month() ) {
 
@@ -205,12 +205,12 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				}
 
 				// Month display
-				echo '<li class="item-month item-month-' . get_the_time('m') . '">' . get_the_time('F') . '</li>';
+				echo '<li class="item-month item-month-' . get_the_time('m') . '"><strong>' . get_the_time('F') . '</strong></li>';
 
 			} else if ( is_year() ) {
 
 				// Display year archive
-				echo '<li class="current item-current-' . get_the_time('Y') . '">' . get_the_time('Y') . '</li>';
+				echo '<li class="current item-current-' . get_the_time('Y') . '"><strong>' . get_the_time('Y') . '</strong></li>';
 
 			} else if ( is_author() ) {
 
@@ -220,22 +220,22 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				$userdata = get_userdata($author);
 
 				// Display author name
-				echo '<li class="current item-current-' . $userdata->user_nicename . '">Author: ' . $userdata->display_name . '</li>';
+				echo '<li class="current item-current-' . $userdata->user_nicename . '"><strong>Author: ' . $userdata->display_name . '</strong></li>';
 
 			} else if ( get_query_var('paged') ) {
 
 				// Paginated archives
-				echo '<li class="current item-current-' . get_query_var('paged') . '">' . __('Page', 'foundationpress' ) . ' ' . get_query_var('paged') . '</li>';
+				echo '<li class="current item-current-' . get_query_var('paged') . '"><strong>' . __('Page', 'foundationpress' ) . ' ' . get_query_var('paged') . '</strong></li>';
 
 			} else if ( is_search() ) {
 
 				// Search results page
-				echo '<li class="current item-current-' . get_search_query() . '">Search results for: ' . get_search_query() . '</li>';
+				echo '<li class="current item-current-' . get_search_query() . '"><strong>Search results for: ' . get_search_query() . '</strong></li>';
 
 			} elseif ( is_404() ) {
 
 				// 404 page
-				echo '<li>Error 404</li>';
+				echo '<li><strong>Error 404</strong></li>';
 			}
 		} else {
 			if ( $showhome ) {
