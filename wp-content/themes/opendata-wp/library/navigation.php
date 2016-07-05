@@ -205,7 +205,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				}
 
 				// Month display
-				echo '<li class="item-month item-month-' . get_the_time('m') . '">' . get_the_time('M') . '</li>';
+				echo '<li class="item-month item-month-' . get_the_time('m') . '">' . get_the_time('F') . '</li>';
 
 			} else if ( is_year() ) {
 
