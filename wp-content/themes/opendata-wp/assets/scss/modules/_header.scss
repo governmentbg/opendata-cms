@@ -8,7 +8,7 @@
     .header-top {
       .top-wrapper {
         padding-top: $global-padding;
-        background-color: initial;
+        background-color: transparent;
         margin-bottom: 0;
 
         @include breakpoint(small only) {
@@ -107,6 +107,7 @@
         .desktop-menu {
           float: right;
           margin-right: $global-margin;
+          background-color: transparent;
         }
       }
     }
