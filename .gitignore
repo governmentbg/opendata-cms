@@ -21,9 +21,10 @@
 #   this version ignores all files by default
 # -----------------------------------------------------------------
 
-# ignore everything in the root except the "wp-content" directory.
+# ignore everything in the root except the "wp-content" directory and the deployment script.
 /*
 !wp-content/
+!wp-cli-deploy/
 
 # ignore everything in the "wp-content" directory, except:
 # mu-plugins, plugins, and themes directories
