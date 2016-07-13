@@ -25,7 +25,7 @@ od_site_title='Another WordPress site, ja' # WordPress site title. You can chang
 # The structure we expect is '*webroot*/opendata-cms/wp-cli-deploy/install.sh'. WordPress will be installed in '*webroot*/'   ('./../../').
 
 #download latest WordPress and place it in the webroot(or the same dir you cloned the repo in)
-wp core download --path=./../../ --locale=bg_BG
+wp core download --path=../../ --locale=bg_BG
 
 #Create a config file, containing all the information WordPress needs to install.
 wp core config --dbname=$od_dbname --dbuser=$od_dbuser --dbpass=$od_dbpass --dbhost=$od_dbhost --dbprefix=$od_dbprefix
@@ -34,8 +34,11 @@ wp core config --dbname=$od_dbname --dbuser=$od_dbuser --dbpass=$od_dbpass --dbh
 wp core install --url=$od_site_url  --title="$od_site_title" --admin_user=$od_admin_user --admin_password=$od_admin_password --admin_email=$od_admin_email
 
 #Copy the wp-content directory from the repository.
-cp -r ./../wp-content/* ./../../wp-content/
+cp -r ../wp-content/* ../../wp-content/
 
 #Build the theme
+cd ../wp-content/themes/opendata-wp/
+npm install
 
 #Activate theme
+wp theme activate 'opendata-wp'
