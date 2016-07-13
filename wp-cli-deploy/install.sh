@@ -6,13 +6,13 @@
 # The vars below are important, so please doublecheck them.
 
 # Required vars
-od_dbname='foundationpress'
-od_dbuser='wp'
-od_dbpass='wp'
-od_site_url='http://foundationpress.dev' # The url of your new site
-od_admin_user='admin' # You can set this to whatever you want, try not to use something too obvious like 'admin' or 'administrator'
-od_admin_password='password' # At least 10 characters.
-od_admin_email='emo@shtrak.eu'
+od_dbname=''
+od_dbuser=''
+od_dbpass=''
+od_site_url='' # The url of your new site
+od_admin_user='' # You can set this to whatever you want, try not to use something too obvious like 'admin' or 'administrator'
+od_admin_password='' # At least 10 characters.
+od_admin_email=''
 
 # Optional vars
 od_dbhost='localhost' #Optional. This should remain 'localhost' in 99% of the cases. Only change it if you really know what you're doing.
@@ -33,12 +33,8 @@ wp core config --dbname=$od_dbname --dbuser=$od_dbuser --dbpass=$od_dbpass --dbh
 #install WordPress
 wp core install --url=$od_site_url  --title="$od_site_title" --admin_user=$od_admin_user --admin_password=$od_admin_password --admin_email=$od_admin_email
 
-#Copy the wp-content directory from the repository.
+#Copy the wp-content from the repo to the new WordPress install
 cp -r ../wp-content/* ../../wp-content/
 
-#Build the theme
-cd ../wp-content/themes/opendata-wp/
-npm install
-
-#Activate theme
-wp theme activate 'opendata-wp'
+#Install the latest .zip package of the theme and then activate it.
+wp theme install ../wp-content/themes/opendata-wp/packaged-theme/latest.zip --force --activate
