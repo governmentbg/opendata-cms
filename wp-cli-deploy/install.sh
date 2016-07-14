@@ -1,23 +1,13 @@
 #!/bin/bash
-# Using this article as source: https://www.smashingmagazine.com/2015/09/wordpress-management-with-wp-cli/
 
-# Main configuration.
-# !!! Optional stuff will be marked as such, everything else is REQUIRED. !!!!!!
-# The vars below are important, so please doublecheck them.
-
-# Required vars
-od_dbname=''
-od_dbuser=''
-od_dbpass=''
-od_site_url='' # The url of your new site
-od_admin_user='' # You can set this to whatever you want, try not to use something too obvious like 'admin' or 'administrator'
-od_admin_password='' # At least 10 characters.
-od_admin_email=''
-
-# Optional vars
-od_dbhost='localhost' #Optional. This should remain 'localhost' in 99% of the cases. Only change it if you really know what you're doing.
-od_dbprefix='odwp_' #Optional.
-od_site_title='Another WordPress site, ja' # WordPress site title. You can change this later in the WordPress settings.
+config="./install.config"
+if [ -f "$config" ]
+then
+  . $config #if install.config is present, use it as source(using '.' as source can cause trouble on some environments)
+else
+  echo "Sorry, I couldn't find an 'install.config' file. Copy install.config.example to install.config and fill in all the required information inside to continue."
+  exit 0
+fi
 
 # This script assumes that you have 'wp-cli' and 'npm' installed and properly set up.
 # You also need a mysql database ready and you need to fill in the db name, user and password in the above variables.
