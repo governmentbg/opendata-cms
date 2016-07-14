@@ -14,4 +14,4 @@ od_admin_email=''
 # Optional vars
 od_dbhost='localhost' #Optional. This should remain 'localhost' in 99% of the cases. Only change it if you really know what you're doing.
 od_dbprefix='odwp_' #Optional.
-od_site_title='Another WordPress site, ja' # WordPress site title. You can change this later in the WordPress settings.
+od_site_title='Портал за отворени данни' # WordPress site title. You can change this later in the WordPress settings.
