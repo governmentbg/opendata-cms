@@ -23,8 +23,5 @@ wp core config --dbname=$od_dbname --dbuser=$od_dbuser --dbpass=$od_dbpass --dbh
 #install WordPress
 wp core install --url=$od_site_url  --title="$od_site_title" --admin_user=$od_admin_user --admin_password=$od_admin_password --admin_email=$od_admin_email
 
-#Copy the wp-content from the repo to the new WordPress install
-cp -r ../wp-content/* ../../wp-content/
-
 #Download the theme package from the latest release, install it and then activate it(and update the old one if there already is one).
 wp theme install $(curl -s https://api.github.com/repos/governmentbg/opendata-cms/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4) --force --activate
