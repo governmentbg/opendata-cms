@@ -6,6 +6,7 @@ echo 'Starting Database backup (WP-CLI export)';
 echo '--------';
 
 wp db export ~/$backup_file_name;
+wp db export ~/latest-db-dump.sql;
 
 echo '--------';
 echo 'Starting file backup';
