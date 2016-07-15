@@ -25,6 +25,8 @@
 /*
 !wp-content/
 !wp-cli-deploy/
+!install/
+!backup-restore/
 !wp-cli.yml
 
 # ignore everything in the "wp-content" directory, except:
