@@ -1,3 +1,5 @@
+#!/bin/sh
+
 last_backup_time=$(date "+%Y-%m-%d-%H-%M-%S");
 backup_file_name="$last_backup_time-DB.sql";
 backup_dir=~/opendata-cms-backup
@@ -19,8 +21,8 @@ echo '--------';
 echo 'Starting file backup';
 echo '--------';
 
-tar -vczf ~/opendata-cms-backup/files-backup_latest.gz .;
-cp ~/opendata-cms-backup/files-backup_latest.gz ~/opendata-cms-backup/older/$last_backup_time/$last_backup_time-files.gz
+tar -vczf ~/opendata-cms-backup/latest-files-backup.tar.gz ./../..;
+cp ~/opendata-cms-backup/latest-files-backup.tar.gz ~/opendata-cms-backup/older/$last_backup_time/$last_backup_time-files.tar.gz;
 
 echo '--------';
 echo 'Backup complete.';
