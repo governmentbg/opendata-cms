@@ -1,6 +1,6 @@
 #!/bin/sh
 
-config="./restore.config";
+config="./backup-restore.config";
 
 backup_dir=~/opendata-cms-backup;
 maintenance_msg="The site is under scheduled maintenance. Check back soon.";
@@ -8,9 +8,9 @@ maintenance_msg="The site is under scheduled maintenance. Check back soon.";
 
 if [ -f "$config" ]
 then
-  . $config #if restore.config is present, use it as source
+  . $config; #if restore.config is present, use it as source
 else
-  echo "Sorry, I couldn't find an 'restore.config' file. Copy restore.config.example to restore.config and fill in all the required information inside to continue.";
+  echo "Sorry, I couldn't find a 'backup-restore.config' file. Copy backup-restore.config.example to backup-restore.config and fill in all the required information inside to continue.";
   exit 0;
 fi
 
@@ -37,4 +37,9 @@ echo '--------';
 echo 'Now extracting the files from the backup archive';
 echo '--------';
 
-tar -zxvf $backup_dir/latest-files-backup.tar.gz -C ./../../
+tar -zxvf $backup_dir/latest-files-backup.tar.gz -C ./../../;
+
+echo '--------';
+echo 'Disable maintenance mode';
+echo '--------';
+rm ../../.maintenance;

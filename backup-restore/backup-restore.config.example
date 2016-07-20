@@ -1,0 +1,6 @@
+#!/bin/sh
+
+## Restore configuration
+
+backup_dir=~/opendata-cms-backup;
+maintenance_msg="Сайтът е временно спрян за планирана профилактика. Опитайте пак след няколко минути.";

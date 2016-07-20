@@ -1,8 +1,15 @@
 #!/bin/sh
+config="./backup-restore.config";
 
-last_backup_time=$(date "+%Y-%m-%d-%H-%M-%S");
-backup_file_name="$last_backup_time-DB.sql";
-backup_dir=~/opendata-cms-backup
+if [ -f "$config" ]
+then
+  . $config; #if backup-restore.config is present, use it as source
+else
+  echo "--------------"
+  echo "Sorry, I couldn't find a 'backup-restore.config' file. Copy backup-restore.config.example to backup-restore.config and fill in all the required information inside to continue.";
+  echo "--------------"
+  exit 0;
+fi
 
 echo '--------';
 echo 'Starting Database backup (WP-CLI export)';
