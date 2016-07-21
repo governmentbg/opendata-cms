@@ -1,5 +1,8 @@
 #!/bin/sh
-
 ## backup and restore scripts configuration
-backup_dir=~/opendata-cms-backup; ## The directory where the backups are stored. Default '~/opendata-cms-backup'.
+
+# The directory where the backups are stored(and restored from). Default '~/opendata-cms-backup'.
+backup_dir=~/opendata-cms-backup;
+
+# The message that will show up while your database is importing.
 maintenance_msg="Сайтът е временно спрян за планирана профилактика. Опитайте пак след няколко минути.";

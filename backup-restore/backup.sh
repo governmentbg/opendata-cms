@@ -24,9 +24,9 @@ fi
 
 mkdir $backup_dir/older/$last_backup_time # Create a Directory with the current timestamp so older backups are easier to find.
 
-wp db export $backup_dir/latest-db-dump.sql; # Export the database as 'latest'. it the export is successfull, copy the sql file to it's respective timestamp directory.
+wp db export $backup_dir/latest-db-dump.sql; # Export the database as 'latest'. it the export is successfull, copy the sql file to its respective timestamp directory.
 if [ $? -eq 0 ]; then
-    echo "***** Done!";
+    echo "***** Done! The database was exported successfully.";
     db_export_status="OK";
     cp $backup_dir/latest-db-dump.sql $backup_dir/older/$last_backup_time/$backup_file_name;
 else
@@ -38,9 +38,21 @@ echo '--------';
 echo 'Starting file backup';
 echo '--------';
 
-tar -vczf ~/opendata-cms-backup/latest-files-backup.tar.gz ./../..;
-cp ~/opendata-cms-backup/latest-files-backup.tar.gz ~/opendata-cms-backup/older/$last_backup_time/$last_backup_time-files.tar.gz;
+tar -vczf $backup_dir/latest-files-backup.tar.gz ./../..; # Archive all site files to a tar.gz and if successfull, copy the archive to its respective timestamp directory.
+if [ $? -eq 0 ]; then
+    cp $backup_dir/latest-files-backup.tar.gz $backup_dir/older/$last_backup_time/$last_backup_time-files.tar.gz;
+    echo "***** Done! All site files were archived successfully.";
+    file_export_status="OK";
+else
+    echo "***** FAIL! There was a problem while archiving the site files.";
+    file_export_status="FAIL";
+fi
 
 echo '--------';
 echo 'Backup complete.';
+echo '--------';
+echo 'Database export status: ' $db_export_status;
+echo '--------';
+echo 'File export status: ' $file_export_status;
+echo '--------';
 echo 'You can find the archived files in ' $backup_dir;

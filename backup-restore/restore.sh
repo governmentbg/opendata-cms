@@ -11,16 +11,16 @@ else
 fi
 
 echo '--------';
-echo 'Putting WordPress under maintainance mode';
+echo 'Enabling maintenance mode';
 echo '--------';
 
 #You can change the message the site outputs during maintenance mode in the config file.
 echo $maintenance_msg > ../../.maintenance;
 if [ $? -eq 0 ]; then
-    echo "***** Done!";
+    echo "***** Done! Maintenance mode enabled.";
     maintenance_mode_enable_status="OK";
 else
-    echo "***** FAIL!";
+    echo "***** FAIL! Couldn't enable maintenance mode.";
     maintenance_mode_enable_status="FAIL";
 fi
 
@@ -29,13 +29,6 @@ echo 'Backup the current database, just in case. A backup of the backup if you w
 echo '--------';
 
 wp db export $backup_dir/dbbackup-before-restore.sql;
-if [ $? -eq 0 ]; then
-    echo "***** Done!";
-    db_export_status="OK";
-else
-    echo "***** FAIL!";
-    db_export_status="FAIL";
-fi
 
 echo '--------';
 echo 'Restoring the database...';
@@ -43,10 +36,10 @@ echo '--------';
 
 wp db import $backup_dir/latest-db-dump.sql;
 if [ $? -eq 0 ]; then
-    echo "***** Done!";
+    echo "***** Done! The database was successfully imported.";
     db_import_status="OK";
 else
-    echo "***** FAIL!";
+    echo "***** FAIL! Couldn't import the database.";
     db_import_status="FAIL";
 fi
 
@@ -56,10 +49,10 @@ echo '--------';
 
 tar -zxvf $backup_dir/latest-files-backup.tar.gz -C ./../../;
 if [ $? -eq 0 ]; then
-    echo "***** Done!";
+    echo "***** Done! The site files were successfully extracted from the backup archive.";
     files_extract_status="OK";
 else
-    echo "***** FAIL!";
+    echo "***** FAIL! Could not extract site files from the backup archive.";
     files_extract_status="FAIL";
 fi
 
@@ -68,9 +61,21 @@ echo 'Disabling maintenance mode';
 echo '--------';
 rm ../../.maintenance;
 if [ $? -eq 0 ]; then
-    echo "***** Done!";
+    echo "***** Done! Maintenance mode disabled.";
     maintenance_mode_disable_status="OK";
 else
-    echo "***** FAIL!";
+    echo "***** FAIL! Coudn't disable maintenance mode. Check for a '.maintenance' file in your WordPress install directory, and delete it if there is one.";
     maintenance_mode_disable_status="FAIL";
 fi
+
+echo '----------------';
+echo 'All done! Status log below:';
+echo '-----';
+echo 'Maintenance mode enabled: ' $maintenance_mode_enable_status;
+echo '-----';
+echo 'Database import: ' $db_import_status;
+echo '-----';
+echo 'Files import: ' $files_extract_status;
+echo '-----';
+echo 'Maintenance mode disabled: ' $maintenance_mode_disable_status;
+echo 'Done.'
