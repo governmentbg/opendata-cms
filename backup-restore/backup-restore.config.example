@@ -1,6 +1,5 @@
 #!/bin/sh
 
-## Restore configuration
-
-backup_dir=~/opendata-cms-backup;
+## backup and restore scripts configuration
+backup_dir=~/opendata-cms-backup; ## The directory where the backups are stored. Default '~/opendata-cms-backup'.
 maintenance_msg="Сайтът е временно спрян за планирана профилактика. Опитайте пак след няколко минути.";

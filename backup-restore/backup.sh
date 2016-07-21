@@ -1,5 +1,7 @@
 #!/bin/sh
 config="./backup-restore.config";
+last_backup_time=$(date "+%Y-%m-%d-%H-%M-%S");
+backup_file_name="$last_backup_time-DB.sql";
 
 if [ -f "$config" ]
 then
@@ -15,14 +17,22 @@ echo '--------';
 echo 'Starting Database backup (WP-CLI export)';
 echo '--------';
 
-if [ ! -d "$backup_dir" ]; then
+if [ ! -d "$backup_dir" ]; then # Create the directory for storing backups, if it doesn't exist already.
   mkdir $backup_dir;
   mkdir $backup_dir/older;
 fi
 
-mkdir $backup_dir/older/$last_backup_time
-wp db export ~/opendata-cms-backup/latest-db-dump.sql;
-wp db export ~/opendata-cms-backup/older/$last_backup_time/$backup_file_name;
+mkdir $backup_dir/older/$last_backup_time # Create a Directory with the current timestamp so older backups are easier to find.
+
+wp db export $backup_dir/latest-db-dump.sql; # Export the database as 'latest'. it the export is successfull, copy the sql file to it's respective timestamp directory.
+if [ $? -eq 0 ]; then
+    echo "***** Done!";
+    db_export_status="OK";
+    cp $backup_dir/latest-db-dump.sql $backup_dir/older/$last_backup_time/$backup_file_name;
+else
+    echo "***** FAIL!";
+    db_export_status="FAIL";
+fi
 
 echo '--------';
 echo 'Starting file backup';
