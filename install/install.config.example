@@ -1,17 +1,29 @@
-# Main configuration.
-# !!! Optional stuff will be marked as such, everything else is REQUIRED. !!!!!!
-# The vars below are important, so please doublecheck them.
+# Installation configuration configuration.
 
-# Required vars
-od_dbname=''
-od_dbuser=''
-od_dbpass=''
-od_site_url='' # The url of your new site
-od_admin_user='' # You can set this to whatever you want, try not to use something too obvious like 'admin' or 'administrator'
-od_admin_password='' # At least 10 characters.
+# Database access details
+od_dbhost='localhost'
+od_dbname='opendata_cms'
+od_dbuser='opendata_cms'
+od_dbpass='your-db-password-here'
+od_dbprefix='odwp_'
+
+# The full URL where this CMS will be installed.
+od_site_url='https://the-domain-of-the-cms.com/'
+
+# Try to avoid obvious choises like 'admin' or 'administrator'.
+od_admin_user=''
+
+# At least 10 characters.
+od_admin_password=''
+
+# The email of the admin user defined above.
 od_admin_email=''
 
-# Optional vars
-od_dbhost='localhost' #Optional. This should remain 'localhost' in 99% of the cases. Only change it if you really know what you're doing.
-od_dbprefix='odwp_' #Optional.
-od_site_title='Портал за отворени данни' # WordPress site title. You can change this later in the WordPress settings.
+# WordPress site title. You can change this later in the WordPress settings.
+od_site_title='Opendata News And Information'
+
+# The language you want the WordPress install to be in.
+od_locale='bg_BG'
+
+# Where to look for the custom theme release packages
+od_theme_releases_url='https://api.github.com/repos/governmentbg/opendata-cms/releases'
