@@ -1,0 +1,50 @@
+server {
+	listen   80 default_server;
+	listen   [::]:80 ipv6only=on;
+
+	server_name .info.opendata.obshtestvo.bg .wordpress.opendata.obshtestvo.bg;
+
+	root /var/www/wordpress;
+	index index.php index.html index.htm;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ /index.php?$args;
+	}
+
+	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+	location ~ \.php$ {
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		# NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+
+		# With php5-fpm:
+		fastcgi_pass unix:/var/run/php5-fpm.sock;
+		fastcgi_index index.php;
+		include fastcgi_params;
+	}
+
+	location = /favicon.ico {
+		log_not_found off;
+		access_log off;
+	}
+
+	location = /robots.txt {
+		allow all;
+		log_not_found off;
+		access_log off;
+	}
+
+	# Deny all attempts to access hidden files such as .htaccess, .htpasswd, .DS_Store (Mac).
+	# Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
+	location ~ /\. {
+		deny all;
+	}
+
+	# Deny access to any files with a .php extension in the uploads directory
+	# Works in sub-directory installs and also in multisite network
+	# Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
+	location ~* /(?:uploads|files)/.*\.php$ {
+		deny all;
+	}
+}
