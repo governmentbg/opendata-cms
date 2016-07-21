@@ -39,7 +39,7 @@ fi
 
 if ! which wp >/dev/null
 then
-  echo "Cannot find a 'xwp' binary in PATH. Please make sure wp-cli is installed properly (see http://wp-cli.org/)."
+  echo "Cannot find a 'wp' binary in PATH. Please make sure wp-cli is installed properly (see http://wp-cli.org/)."
   exit 4
 fi
 
