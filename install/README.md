@@ -14,8 +14,8 @@
 ## Изисквания за инсталацията
 
 * Linux или Unix-like сървърна среда.
-* Препоръчително PHP 5.6+ и MySQL или MariaDB 5.6+, или минимум PHP 5.2.4+ and MySQL 5.0+ (според [изискванията на WordPress](https://wordpress.org/about/requirements/)).
-* Конфигуриран и работещ Nginx или Apache уеб сървър и write достъп до webroot-а.
+* Препоръчително PHP 5.6+ и MySQL или MariaDB 5.6+, или минимум PHP 5.2.4+ and MySQL 5.0+ (според [изискванията на WordPress](https://wordpress.org/about/requirements/)). PHP трябва да има поддръжка за MySQL.
+* Конфигуриран и работещ PHP-FPM и Nginx или Apache уеб сървър и write достъп до webroot-а.
 * Създадена MySQL база данни и потребител, имащ пълен достъп до нея.
 * Инсталирано [WP-CLI](http://wp-cli.org/) в `$PATH` (като изпълним файл `wp`).
 * Попълнен с правилната информация `install.config` файл. За целта се копира съдържанието на [`install.config.example`](install.config.example) в нов файл с име `install.config` в същата директория и се попълват променливите вътре с данните, нужни за новата инсталация.
