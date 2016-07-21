@@ -1,27 +1,73 @@
-#!/bin/bash
+#!/bin/sh
 
-config="./install.config"
-if [ -f "$config" ]
+set -e
+
+install_root_dir=`dirname "$0"`
+config="$install_root_dir/install.config"
+webroot_path="$1"
+
+if [ -z "$webroot_path" ]
 then
-  . $config #if install.config is present, use it as source(using '.' as source can cause trouble on some environments)
-else
-  echo "Sorry, I couldn't find an 'install.config' file. Copy install.config.example to install.config and fill in all the required information inside to continue."
-  exit 0
+  echo "Usage: $0 /webroot/path/to/install/to"
+  exit 1
 fi
 
-# This script assumes that you have 'wp-cli' and 'npm' installed and properly set up.
+if [ -f "$config" ]
+then
+  . $config
+else
+  echo "Sorry, I couldn't find an 'install.config' file. Copy $install_root_dir/install.config.example to $config and fill in all the required information inside to continue."
+  exit 2
+fi
+
+missing_variables=""
+for required_variable in od_admin_user od_admin_password od_admin_email od_dbname od_dbuser
+do
+  eval "value=\$$required_variable"
+  if [ -z "$value" ]
+  then
+    missing_variables="$missing_variables\nPlease fill in the $required_variable variable"
+  fi
+done
+
+if [ ! -z "$missing_variables" ]
+then
+  echo "You have not provided values to some of the required variables in $config:"
+  echo $missing_variables
+  exit 3
+fi
+
+if ! which wp >/dev/null
+then
+  echo "Cannot find a 'xwp' binary in PATH. Please make sure wp-cli is installed properly (see http://wp-cli.org/)."
+  exit 4
+fi
+
+# This script assumes that you have 'wp-cli' installed and properly set up.
 # You also need a mysql database ready and you need to fill in the db name, user and password in the above variables.
-# We also assume you cloned the 'opendata-cms' repository in your webroot(or wherever you want the wordpress instance installed)
-# The structure we expect is '*webroot*/opendata-cms/wp-cli-deploy/install.sh'. WordPress will be installed in '*webroot*/'   ('./../../').
 
-#download latest WordPress and place it in the webroot(or the same dir you cloned the repo in)
-wp core download --path=../../ --locale=bg_BG
+echo "Downloading the latest WordPress and placing it in '$webroot_path'..."
+if [ -d "$webroot_path" -a -f "$webroot_path/wp-settings.php" ]
+then
+  echo "WordPress seems to be already downloaded and present in '$webroot_path'"
+else
+  wp core download --path="$webroot_path" --locale="$od_locale"
+fi
 
-#Create a config file, containing all the information WordPress needs to install.
-wp core config --dbname=$od_dbname --dbuser=$od_dbuser --dbpass=$od_dbpass --dbhost=$od_dbhost --dbprefix=$od_dbprefix
+echo "Creating a config file, containing all the information WordPress needs to install..."
+if [ -f "$webroot_path/wp-config.php" ]
+then
+  echo "A wp-config.php file already exists in '$webroot_path'."
+else
+  wp core config --path="$webroot_path" --dbname="$od_dbname" --dbuser="$od_dbuser" --dbpass="$od_dbpass" --dbhost="$od_dbhost" --dbprefix="$od_dbprefix"
+fi
 
-#install WordPress
-wp core install --url=$od_site_url  --title="$od_site_title" --admin_user=$od_admin_user --admin_password=$od_admin_password --admin_email=$od_admin_email
+echo "Installing WordPress..."
+wp core install --path="$webroot_path" --url="$od_site_url"  --title="$od_site_title" --admin_user="$od_admin_user" --admin_password="$od_admin_password" --admin_email="$od_admin_email"
 
-#Download the theme package from the latest release, install it and then activate it(and update the old one if there already is one).
-wp theme install $(curl -s https://api.github.com/repos/governmentbg/opendata-cms/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4) --force --activate
+echo "Downloading, installing and activating the latest opendata-cms theme (this will update the theme if it's already installed)..."
+wp theme install --path="$webroot_path" $(curl -s "$od_theme_releases_url" | grep browser_download_url | head -n 1 | cut -d '"' -f 4) --force --activate
+
+echo
+echo "All done, WordPress installed and configured. Happy publishing!"
+echo
