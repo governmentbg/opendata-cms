@@ -10,7 +10,7 @@ od_dbprefix='odwp_'
 # The full URL where this CMS will be installed.
 od_site_url='https://the-domain-of-the-cms.com/'
 
-# Try to avoid obvious choises like 'admin' or 'administrator'.
+# Try to avoid obvious choices like 'admin' or 'administrator'.
 od_admin_user=''
 
 # At least 10 characters.
