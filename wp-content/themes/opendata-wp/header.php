@@ -38,9 +38,6 @@
 
 			<div class="title-bar">
 				<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
-				<div class="title-bar-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</div>
 			</div>
 
 			<form role="search" method="get" id="header-searchform" action="http://opendata.government.bg/" class="mobile-search">

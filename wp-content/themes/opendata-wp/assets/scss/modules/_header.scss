@@ -53,6 +53,21 @@
       }
     }
 
+    .title-bar {
+      background-color: initial;
+
+      .menu-icon {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+
+        &::after {
+          background: $primary-color;
+          box-shadow: 0 7px 0 $primary-color,0 14px 0 $primary-color;
+        }
+      }
+    }
+
     .top-bar {
       background-color: initial;
 
@@ -92,6 +107,7 @@
 
               @include breakpoint(small only) {
                 width: 100%;
+                border-radius: 0;
               }
             }
 

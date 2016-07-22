@@ -81,6 +81,18 @@
       display: none;
     }
 
+  .is-dropdown-submenu-parent {
+    a {
+      &::after {
+        border-color: #fff transparent transparent !important;
+      }
+    }
+  }
+
+  .menu.vertical > li {
+    margin-top: 1px;
+  }
+
 }
 /* Basic styles for post navigation. Nicolas Gallagher's "Micro clearfix" https://css-tricks.com/snippets/css/clear-fix/ */
 .post-navigation:before,
