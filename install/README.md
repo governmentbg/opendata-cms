@@ -23,18 +23,18 @@
 ## Инсталация
 
 1. Клонирайте хранилището, копирайте конфигурационния скрипт и го редактирайте:
-
-```shell
-git clone https://github.com/governmentbg/opendata-cms.git
-cd opendata-cms
-cp opendata-cms/install/install.config.exmample opendata-cms/install/install.config
-```
+  
+    ```shell
+    git clone https://github.com/governmentbg/opendata-cms.git
+    cd opendata-cms
+    cp opendata-cms/install/install.config.exmample opendata-cms/install/install.config
+    ```
 
 2. Стартирайте инсталационния скрипт, посочвайки пътя до папката, където искате да бъде инсталиран WordPress (директорията ще бъде създадена, ако не съществува). По възможност направете това като потребителя, с който ще работи WordPress, за да бъдат създадени директориите с правилните права (наприемр, `www-data`):
-
-```shell
-./opendata-cms/install/install.sh /var/www/opendata-cms
-```
+    
+    ```shell
+    ./opendata-cms/install/install.sh /var/www/opendata-cms
+    ```
 
 При успешно приключване вече може да отворите сайта и да влезете в административната част, намираща се на адрес `$URL/wp-admin` с потребителя и паролата, въведени от вас в `install.config`.
 
