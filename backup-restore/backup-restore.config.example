@@ -5,4 +5,4 @@
 backup_dir=~/opendata-cms-backup;
 
 # The message that will show up while your database is importing.
-maintenance_msg="Сайтът е временно спрян за планирана профилактика. Опитайте пак след няколко минути.";
+maintenance_msg="Down for scheduled maintenance. The site will be back shortly.";
