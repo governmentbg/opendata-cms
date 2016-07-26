@@ -81,7 +81,7 @@ then
 
   # Extract the theme from the zip.
   unzip $webroot_path/wp-content/themes/foundationpress_*.zip -d $webroot_path/wp-content/themes/opendata-wp
-  wp --path="$webroot_path" theme activate opendata-wp --force
+  wp --path="$webroot_path" theme activate opendata-wp
   # We don't need the theme archive anymore.
   rm $webroot_path/wp-content/themes/foundationpress_*.zip
 else
