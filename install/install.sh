@@ -68,7 +68,8 @@ wp core install --path="$webroot_path" --url="$od_site_url"  --title="$od_site_t
 echo "Downloading, installing and activating the latest opendata-cms theme (this will update the theme if it's already installed)..."
       # wp theme install --path="$webroot_path" $(curl -s "$od_theme_releases_url" | grep browser_download_url | head -n 1 | cut -d '"' -f 4) --activate
 wget $(curl -s "$od_theme_releases_url" | grep browser_download_url | head -n 1 | cut -d '"' -f 4) -P $webroot_path/wp-content/themes/
-#store the download status in a variable for later use
+
+# If the download is okay, extract the theme and activate it.
 if [ $? -eq 0 ]
 then
 
