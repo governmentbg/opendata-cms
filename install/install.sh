@@ -66,7 +66,24 @@ echo "Installing WordPress..."
 wp core install --path="$webroot_path" --url="$od_site_url"  --title="$od_site_title" --admin_user="$od_admin_user" --admin_password="$od_admin_password" --admin_email="$od_admin_email"
 
 echo "Downloading, installing and activating the latest opendata-cms theme (this will update the theme if it's already installed)..."
-wp theme install --path="$webroot_path" $(curl -s "$od_theme_releases_url" | grep browser_download_url | head -n 1 | cut -d '"' -f 4) --force --activate
+      # wp theme install --path="$webroot_path" $(curl -s "$od_theme_releases_url" | grep browser_download_url | head -n 1 | cut -d '"' -f 4) --activate
+wget $(curl -s "$od_theme_releases_url" | grep browser_download_url | head -n 1 | cut -d '"' -f 4) -P $webroot_path/wp-content/themes/
+#store the download status in a variable for later use
+if [ $? -eq 0 ]
+then
+
+  # Create the theme directory if it doesn't exist.
+  if [ ! -d "$webroot_path/wp-content/themes/opendata-wp" ]
+  then
+    mkdir $webroot_path/wp-content/themes/opendata-wp
+  fi
+
+  # Extract the theme from the zip.
+  unzip $webroot_path/wp-content/themes/foundationpress_*.zip -d $webroot_path/wp-content/themes/opendata-wp
+  wp --path="$webroot_path" theme activate opendata-wp --force
+else
+  echo "Theme download failed. Is the download URL correct?"
+fi
 
 echo
 echo "All done, WordPress installed and configured. Happy publishing!"
