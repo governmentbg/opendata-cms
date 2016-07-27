@@ -126,12 +126,12 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 			if ( is_single() ) {
 
 				// Single post
-				echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
+				echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . wp_trim_words( get_the_title(), 3, '...' ) . '</strong></li>';
 
 			} else if ( is_category() ) {
 
 				// Category page
-				echo '<li class="item-current item-cat-' . $category[0]->term_id . ' item-cat-' . $category[0]->category_nicename . '"><strong class="bread-current bread-cat-' . $category[0]->term_id . ' bread-cat-' . $category[0]->category_nicename . '">' . __( 'Category: ', 'foundationpress' ) . $category[0]->cat_name . '</strong></li>';
+				echo '<li class="item-current item-cat-' . $category[0]->term_id . ' item-cat-' . $category[0]->category_nicename . '"><strong class="bread-current bread-cat-' . $category[0]->term_id . ' bread-cat-' . $category[0]->category_nicename . '">' . __( 'Category: ', 'foundationpress' ) . wp_trim_words( $category[0]->cat_name, 3, '...' ) . '</strong></li>';
 
 			} else if ( is_page() ) {
 
@@ -147,7 +147,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 					// Parent page loop
 					$parents = '';
 					foreach ( $anc as $ancestor ) {
-						$parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></li>';
+						$parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . wp_trim_words( get_the_title($ancestor), 3, '...' ) . '</a></li>';
 						if ( $separatorclass ) {
 							$parents .= '<li class="separator separator-' . $ancestor . '"> ' . $separator . ' </li>';
 						}
@@ -157,12 +157,12 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 					echo $parents;
 
 					// Current page
-					echo '<li class="current item-' . $post->ID . '"><strong>' . get_the_title() . '</strong></li>';
+					echo '<li class="current item-' . $post->ID . '"><strong>' . wp_trim_words( get_the_title(), 3, '...' ) . '</strong></li>';
 
 				} else {
 
 					// Just display current page if no parents
-					echo '<li class="current item-' . $post->ID . '"><strong>' . get_the_title() . '</strong></li>';
+					echo '<li class="current item-' . $post->ID . '"><strong>' . wp_trim_words( get_the_title(), 3, '...' ) . '</strong></li>';
 
 				}
 			} else if ( is_tag() ) {
@@ -175,7 +175,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				$terms = get_terms($taxonomy, $args);
 
 				// Display the tag name
-				echo '<li class="current item-tag-' . $terms[0]->term_id . ' item-tag-' . $terms[0]->slug . '"><strong>' . $terms[0]->name . '</strong></li>';
+				echo '<li class="current item-tag-' . $terms[0]->term_id . ' item-tag-' . $terms[0]->slug . '"><strong>' . wp_trim_words( $terms[0]->name, 3, '...' ) . '</strong></li>';
 
 			} elseif ( is_day() ) {
 
@@ -230,7 +230,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 			} else if ( is_search() ) {
 
 				// Search results page
-				echo '<li class="current item-current-' . get_search_query() . '"><strong>Search results for: ' . get_search_query() . '</strong></li>';
+				echo '<li class="current item-current-' . get_search_query() . '"><strong>Search results for: ' . wp_trim_words( get_search_query(), 5, '...' ) . '</strong></li>';
 
 			} elseif ( is_404() ) {
 
