@@ -36,7 +36,7 @@ wp --path="$site_path" db export "$backup_dir/latest-db-dump.sql"
 if [ $? -eq 0 ]
 then
   echo "***** Done! The database was exported successfully."
-  cat "$backup_dir/latest-db-dump.sql" | gzip > "$backup_dir/older/$last_backup_time/$backup_file_name"
+  cat "$backup_dir/latest-db-dump.sql" | gzip > "$backup_dir/older/$last_backup_time/$backup_file_name.gz"
 else
   echo "***** The database could not be exported. Stopping.."
   exit 3
