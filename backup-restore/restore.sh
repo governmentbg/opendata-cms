@@ -57,7 +57,7 @@ echo '--------'
 echo 'Now extracting the files from the backup archive'
 echo '--------'
 
-tar -zxvf "$backup_dir/latest-files-backup.tar.gz" -C "$site_path/"
+tar -zxvf "$backup_dir/latest-files-backup.tar.gz" -C "/"
 if [ $? -eq 0 ]
 then
   echo "***** Done! The site files were successfully extracted from the backup archive."
