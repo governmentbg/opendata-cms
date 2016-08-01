@@ -15,7 +15,7 @@ backup_file_name="$last_backup_time-DB.sql"
 
 if [ -f "$config" ]
 then
-  . $config; #if backup-restore.config is present, use it as source
+  . $config
 else
   echo "--------------"
   echo "Sorry, I couldn't find a 'backup-restore.config' file. Copy backup-restore.config.example to backup-restore.config and fill in all the required information inside to continue."
@@ -38,11 +38,11 @@ mkdir $backup_dir/older/$last_backup_time # Create a Directory with the current 
 wp --path=$site_path db export $backup_dir/latest-db-dump.sql # Export the database as 'latest'. If the export is successfull, copy the sql file to its respective timestamp directory.
 if [ $? -eq 0 ]
 then
-    echo "***** Done! The database was exported successfully."
-    cp $backup_dir/latest-db-dump.sql $backup_dir/older/$last_backup_time/$backup_file_name
+  echo "***** Done! The database was exported successfully."
+  cp $backup_dir/latest-db-dump.sql $backup_dir/older/$last_backup_time/$backup_file_name
 else
-    echo "***** The database could not be exported. Stopping.."
-    exit 3
+  echo "***** The database could not be exported. Stopping.."
+  exit 3
 fi
 
 echo '--------'
@@ -52,11 +52,11 @@ echo '--------'
 tar -vczf $backup_dir/latest-files-backup.tar.gz $site_path # Archive all site files to a tar.gz and if successfull, copy the archive to its respective timestamp directory.
 if [ $? -eq 0 ]
 then
-    cp $backup_dir/latest-files-backup.tar.gz $backup_dir/older/$last_backup_time/$last_backup_time-files.tar.gz;
-    echo "***** Done! All site files were archived successfully."
+  cp $backup_dir/latest-files-backup.tar.gz $backup_dir/older/$last_backup_time/$last_backup_time-files.tar.gz
+  echo "***** Done! All site files were archived successfully."
 else
-    echo "***** There was a problem while archiving the site files. Stopping.."
-    exit 4
+  echo "***** There was a problem while archiving the site files. Stopping.."
+  exit 4
 fi
 
 echo '--------'
