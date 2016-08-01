@@ -12,7 +12,7 @@ fi
 
 if [ -f "$config" ]
 then
-  . $config #if restore.config is present, use it as source
+  . "$config"
 else
   echo "Sorry, I couldn't find a 'backup-restore.config' file. Copy backup-restore.config.example to backup-restore.config and fill in all the required information inside to continue."
   exit 2
@@ -22,8 +22,8 @@ echo '--------'
 echo 'Enabling maintenance mode'
 echo '--------'
 
-#You can change the message the site outputs during maintenance mode in the config file.
-echo $maintenance_msg > $site_path/.maintenance
+# You can change the message the site outputs during maintenance mode in the config file.
+echo "$maintenance_msg" > "$site_path/.maintenance"
 if [ $? -eq 0 ]
 then
   echo "***** Done! Maintenance mode enabled."
@@ -37,13 +37,13 @@ echo '--------'
 echo 'Backup the current database, just in case. A backup of the backup if you will. You can find it in ' $backup_dir
 echo '--------'
 
-wp --path=$site_path db export $backup_dir/dbbackup-before-restore.sql
+wp --path="$site_path" db export "$backup_dir/dbbackup-before-restore.sql"
 
 echo '--------'
 echo 'Restoring the database...'
 echo '--------'
 
-wp --path=$site_path db import $backup_dir/latest-db-dump.sql
+wp --path="$site_path" db import "$backup_dir/latest-db-dump.sql"
 if [ $? -eq 0 ]
 then
   echo "***** Done! The database was successfully imported."
@@ -57,7 +57,7 @@ echo '--------'
 echo 'Now extracting the files from the backup archive'
 echo '--------'
 
-tar -zxvf $backup_dir/latest-files-backup.tar.gz -C $site_path/
+tar -zxvf "$backup_dir/latest-files-backup.tar.gz" -C "$site_path/"
 if [ $? -eq 0 ]
 then
   echo "***** Done! The site files were successfully extracted from the backup archive."
@@ -70,7 +70,7 @@ fi
 echo '--------'
 echo 'Disabling maintenance mode'
 echo '--------'
-rm $site_path/.maintenance
+rm "$site_path/.maintenance"
 if [ $? -eq 0 ]
 then
   echo "***** Done! Maintenance mode disabled."
