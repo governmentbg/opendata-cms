@@ -1,3 +1,13 @@
+map $remote_addr $allowed_ip {
+# Enter the IPs that you want to have access to the backend. 1 after the IP will allow access
+# and 0 will deny access(if for example the default value is 1 )
+
+	# 1.2.3.4 1;
+
+	#change the default value below to 0, to enable the IP restrictions for the site backend
+	default 1;
+}
+
 server {
 	listen   80;
 	listen   [::]:80 ipv6only=on;
@@ -22,6 +32,21 @@ server {
 		fastcgi_pass unix:/var/run/php5-fpm.sock;
 		fastcgi_index index.php;
 		include fastcgi_params;
+	}
+
+	# Check the allowed IPs and deny access to everyone else, accordingly.
+	set $check '';
+
+	if ( $allowed_ip = 0 ) {
+		set $check "A";
+	}
+
+	if ( $request_uri ~ ^/wp-login\.php ) {
+		set $check "${check}B";
+	}
+
+	if ( $check = "AB" ) {
+		return 403;
 	}
 
 	location = /favicon.ico {
