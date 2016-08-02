@@ -23,30 +23,17 @@ server {
 		try_files $uri $uri/ /index.php?$args;
 	}
 
+	location ~ ^/wp-login\.php {
+		include _fastcgi_init.conf;
+		include _site_admin_whitelist_ips.conf;
+	}
+
 	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
 	location ~ \.php$ {
 		fastcgi_split_path_info ^(.+\.php)(/.+)$;
 		# NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
 
-		# With php5-fpm:
-		fastcgi_pass unix:/var/run/php5-fpm.sock;
-		fastcgi_index index.php;
-		include fastcgi_params;
-	}
-
-	# Check the allowed IPs and deny access to everyone else, accordingly.
-	set $check '';
-
-	if ( $allowed_ip = 0 ) {
-		set $check "A";
-	}
-
-	if ( $request_uri ~ ^/wp-login\.php ) {
-		set $check "${check}B";
-	}
-
-	if ( $check = "AB" ) {
-		return 403;
+		include _fastcgi_init.conf;
 	}
 
 	location = /favicon.ico {
