@@ -29,7 +29,7 @@
 	<?php
 		$logo_link = esc_url( get_theme_mod( 'logo_link_url' ) );
 
-		if( empty( get_theme_mod( 'logo_link_url' ) ) ) {
+		if( empty( $logo_link ) ) {
 			$logo_link = home_url();
 		}
 	?>
