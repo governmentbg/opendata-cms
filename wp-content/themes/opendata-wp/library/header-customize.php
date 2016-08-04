@@ -17,7 +17,7 @@ function od_customize_header( $wp_customize ) {
 
 	// Create custom field for mobile navigation layout
 	$wp_customize->add_section( 'custom_logo_link' , array(
-		'title'	=> __('Custom logo link','foundationpress'),
+		'title'	=> __( 'Custom logo link','foundationpress' ),
 		'panel' => 'header_settings',
 		'priority' => 1000,
 	));

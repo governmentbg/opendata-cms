@@ -26,12 +26,18 @@
 	<?php endif; ?>
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
+	<?php
+		$logo_link = esc_url( get_theme_mod( 'logo_link_url' ) );
 
+		if( empty( get_theme_mod( 'logo_link_url' ) ) ) {
+			$logo_link = home_url();
+		}
+	?>
 	<header id="masthead" class="site-header od-header" role="banner">
 		<div class="header-wrapper row">
 			<div class="header-top row small-12 column">
 				<ul class="top-wrapper small-12 column row">
-					<a href="<?php echo esc_url( get_theme_mod( 'logo_link_url' ) ); ?>" class="home-link medium-3 column"><img class="header-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" /></a>
+					<a href="<?php echo $logo_link; ?>" class="home-link medium-3 column"><img class="header-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" /></a>
 					<h2 class="site-title medium-9 column"><span>Портал за отворени данни </span> <br /> на Република България</h2>
 				</ul>
 			</div>
